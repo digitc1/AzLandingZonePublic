@@ -1,0 +1,16 @@
+{
+	"region": {
+		"type": "String",
+        "metadata": {
+			"displayName": "Location",
+			"description": "Region where most of resources are deployed"
+        }
+    },
+    "workspaceId": {
+        "type": "String",
+        "metadata": {
+            "displayName": "Log Analytics workspace Id",
+            "description": "Id of Landing Zone's log analytics workspace"
+        }
+    }
+}

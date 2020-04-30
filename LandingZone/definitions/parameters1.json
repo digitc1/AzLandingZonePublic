@@ -1,0 +1,16 @@
+{
+	"region": {
+		"type": "String",
+        "metadata": {
+			"displayName": "Location",
+			"description": "Region where most of resources are deployed"
+        }
+    },
+    "storageAccountId": {
+        "type": "String",
+        "metadata": {
+            "displayName": "storage account ID",
+            "description": "ID of Landing Zone's storage account"
+        }
+    }
+}

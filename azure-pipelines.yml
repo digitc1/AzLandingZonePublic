@@ -1,0 +1,25 @@
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+steps:
+  - task: CopyFiles@2
+    inputs:
+      Contents: '**/LandingZone/**'
+      TargetFolder: '$(build.artifactstagingdirectory)'
+      OverWrite: true
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'drop'
+      publishLocation: 'Container'
+  - task: UniversalPackages@0
+    inputs:
+      command: 'publish'
+      publishDirectory: '$(Build.ArtifactStagingDirectory)'
+      feedsToUsePublish: 'internal'
+      vstsFeedPublish: '6414d3a7-f802-4703-8cd7-9cef7c9a9617/6a3c56f7-797c-4a29-b562-75b5178170f0'
+      vstsFeedPackagePublish: 'my-test-lz'
+      versionOption: 'patch'

@@ -1,0 +1,16 @@
+{
+	"contactName": {
+		"type": "String",
+        "metadata": {
+			"displayName": "contact id",
+			"description": "contact id for Azure Security Center (should be defaultX where x is a number)"
+        }
+    },
+    "contactEmail": {
+        "type": "String",
+        "metadata": {
+            "displayName": "contact email",
+            "description": "email of the security contact"
+        }
+    }
+}

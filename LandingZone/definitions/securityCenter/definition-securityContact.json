@@ -51,7 +51,7 @@
                 "type": "Microsoft.Security/securityContacts",
                 "apiVersion": "2017-08-01-preview",
                 "properties": {
-                  "email": "[parameters('contactName')]",
+                  "email": "[parameters('contactEmail')]",
                   "alertNotifications": "On",
                   "alertsToAdmins": "On"
                 }

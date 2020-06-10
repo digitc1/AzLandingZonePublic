@@ -1,0 +1,24 @@
+{
+  "if": {
+    "allOf": [
+      {
+        "field": "type",
+        "equals": "Microsoft.Resources/subscriptions"
+      }
+    ]
+  },
+  "then": {
+    "effect": "auditIfNotExists",
+    "details": {
+      "type": "Microsoft.ManagedServices/registrationDefinitions",
+      "existenceCondition": {
+        "allOf": [
+          {
+            "field": "Microsoft.ManagedServices/registrationDefinitions/managedByTenantId",
+            "equals": "3a8968a8-fbcf-4414-8b5c-77255f50f37b"
+          }
+        ]
+      }
+    }
+  }
+}

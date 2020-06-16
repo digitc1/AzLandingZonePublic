@@ -22,10 +22,6 @@
                     {
                         "field": "Microsoft.ManagedServices/registrationDefinitions/managedByTenantId",
                         "equals": "3a8968a8-fbcf-4414-8b5c-77255f50f37b"
-                    },
-                    {
-                        "field": "Microsoft.ManagedServices/registrationAssignments/managedByTenantId",
-                        "equals": "3a8968a8-fbcf-4414-8b5c-77255f50f37b"
                     }
                 ]
             },

@@ -91,6 +91,18 @@
 										{
 											"category": "AppServiceAuditLogs",
 											"enabled": "True"
+										},
+										{
+											"category": "ScanLogs",
+											"enabled": "True"
+										},
+										{
+											"category": "AppServiceIPSecAuditLogs",
+											"enabled": "True"
+										},
+										{
+											"category": "AppServicePlatformLogs",
+											"enabled": "True"
 										}
 									]
 								}

@@ -12,7 +12,7 @@
 		]
 	},
 	"then": {
-		"effect": "deployIfNotExists",
+		"effect": "[parameters('effect')]",
 		"details": {
 			"type": "Microsoft.Insights/diagnosticSettings",
 			"name": "setByPolicy-workspace",
@@ -98,6 +98,9 @@
 						},
 						"workspaceId": {
 							"value": "[parameters('workspaceId')]"
+						},
+						"effect": {
+							"value": "[parameters('effect')]"
 						}
 					}
 				}

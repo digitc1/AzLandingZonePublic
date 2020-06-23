@@ -98,6 +98,9 @@
 						},
 						"storageAccountId": {
 							"value": "[parameters('storageAccountId')]"
+						},
+						"effect": {
+							"value": "[parameters('effect')]"
 						}
 					}
 				}

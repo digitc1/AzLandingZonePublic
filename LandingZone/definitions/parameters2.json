@@ -12,5 +12,18 @@
             "displayName": "Log Analytics workspace Id",
             "description": "Id of Landing Zone's log analytics workspace"
         }
+    },
+    "effect": {
+        "type": "String",
+        "metadata": {
+            "displayName": "Effect",
+            "description": "Enable or Disable the execution of the policy"
+        },
+        "allowedValues":[
+            "AuditIfNotExists",
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "defaultValue": "DeployIfNotExists"
     }
 }

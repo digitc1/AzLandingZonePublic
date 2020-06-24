@@ -97,41 +97,33 @@
 											"enabled": "True"
                                         },
                                         {
+											"category": "DatabaseWaitStatistics",
+											"enabled": "True"
+                                        },
+                                        {
+											"category": "Timeouts",
+											"enabled": "True"
+                                        },
+                                        {
 											"category": "Blocks",
 											"enabled": "True"
                                         },
                                         {
-											"category": "Deadlocks",
+											"category": "DeadLocks",
 											"enabled": "True"
                                         },
                                         {
-											"category": "Audit",
+											"category": "Basic",
 											"enabled": "True"
                                         },
                                         {
-											"category": "SQLSecurityAuditEvents",
+											"category": "InstanceAndAppAdvanced",
 											"enabled": "True"
                                         },
                                         {
-											"category": "DmsWorkers",
+											"category": "WorkloadManagement",
 											"enabled": "True"
-                                        },
-                                        {
-											"category": "ExecRequests",
-											"enabled": "True"
-                                        },
-                                        {
-											"category": "RequestSteps",
-											"enabled": "True"
-                                        },
-                                        {
-											"category": "SqlRequests",
-											"enabled": "True"
-                                        },
-                                        {
-											"category": "Waits",
-											"enabled": "True"
-										}
+                                        }
 									]
 								}
 							}

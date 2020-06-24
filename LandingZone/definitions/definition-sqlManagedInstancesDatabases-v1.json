@@ -12,7 +12,7 @@
 		]
 	},
 	"then": {
-		"effect": "deployIfNotExists",
+		"effect": "[parameters('effect')]",
 		"details": {
 			"type": "Microsoft.Insights/diagnosticSettings",
 			"name": "setByPolicy-storageAccount",
@@ -92,6 +92,9 @@
 						},
 						"storageAccountId": {
 							"value": "[parameters('storageAccountId')]"
+						},
+						"effect": {
+							"value": "[parameters('effect')]"
 						}
 					}
 				}

@@ -12,5 +12,18 @@
             "displayName": "storage account ID",
             "description": "ID of Landing Zone's storage account"
         }
+    },
+    "effect": {
+        "type": "String",
+        "metadata": {
+            "displayName": "Effect",
+            "description": "Enable or Disable the execution of the policy"
+        },
+        "allowedValues":[
+            "AuditIfNotExists",
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "defaultValue": "DeployIfNotExists"
     }
 }

@@ -12,7 +12,7 @@
 		]
 	},
 	"then": {
-		"effect": "deployIfNotExists",
+		"effect": "[parameters('effect')]",
 		"details": {
 			"type": "Microsoft.Insights/diagnosticSettings",
 			"name": "setByPolicy-eventHub",
@@ -125,7 +125,10 @@
                         },
                         "eventHubName": {
                             "value": "[parameters('eventHubName')]"
-                        }
+                        },
+						"effect": {
+							"value": "[parameters('effect')]"
+						}
 					}
 				}
 			}

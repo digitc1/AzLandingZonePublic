@@ -46,6 +46,9 @@
 							},
 							"storageAccountId": {
 								"type": "string"
+							},
+							"effect": {
+								"type": "string"
 							}
 						},
 						"resources": [

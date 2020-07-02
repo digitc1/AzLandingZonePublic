@@ -49,7 +49,10 @@
                             },
                             "eventHubName": {
                                 "type": "string"
-                            }
+                            },
+							"effect": {
+								"type": "string"
+							}
 						},
 						"resources": [
 							{

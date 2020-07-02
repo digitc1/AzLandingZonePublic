@@ -50,6 +50,9 @@
 							},
 							"workspaceId": {
 								"type": "string"
+							},
+							"effect": {
+								"type": "string"
 							}
 						},
 						"resources": [

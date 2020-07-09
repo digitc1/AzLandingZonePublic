@@ -3,7 +3,7 @@
 		"allOf": [
 			{
 				"field": "type",
-				"equals": "Microsoft.Sql/servers/databases"
+				"equals": "Microsoft.Web/sites"
 			},
 			{
 				"field": "location",
@@ -57,7 +57,7 @@
 						},
 						"resources": [
 							{
-								"type": "Microsoft.Sql/servers/databases/providers/diagnosticSettings",
+								"type": "Microsoft.Web/sites/providers/diagnosticSettings",
 								"apiVersion": "2017-05-01-preview",
 								"name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/setByPolicy-storageAccount')]",
 								"location": "[parameters('region')]",
@@ -66,67 +66,19 @@
 									"storageAccountId": "[parameters('storageAccountId')]",
 									"metrics": [
 										{
-											"category": "Basic",
+											"category": "AllMetrics",
 											"enabled": "True",
 											"retentionPolicy": {
 												"enabled": false,
 												"days": 0
 											}
-                                        },
-                                        {
-											"category": "InstanceAndAppAdvanced",
-											"enabled": "True",
-											"retentionPolicy": {
-												"enabled": false,
-												"days": 0
-											}
-                                        },
-                                        {
-											"category": "WorkloadManagement",
-											"enabled": "True",
-											"retentionPolicy": {
-												"enabled": false,
-												"days": 0
-											}
-                                        }
+										}
 									],
 									"logs": [
 										{
-											"category": "SQLInsights",
+											"category": "functionAppLogs",
 											"enabled": "True"
-                                        },
-                                        {
-											"category": "AutomaticTuning",
-											"enabled": "True"
-                                        },
-                                        {
-											"category": "QueryStoreWaitStatistics",
-											"enabled": "True"
-                                        },
-                                        {
-											"category": "QueryStoreRuntimeStatistics",
-											"enabled": "True"
-                                        },
-                                        {
-											"category": "Errors",
-											"enabled": "True"
-                                        },
-                                        {
-											"category": "DatabaseWaitStatistics",
-											"enabled": "True"
-                                        },
-                                        {
-											"category": "Timeouts",
-											"enabled": "True"
-                                        },
-                                        {
-											"category": "Blocks",
-											"enabled": "True"
-                                        },
-                                        {
-											"category": "DeadLocks",
-											"enabled": "True"
-                                        }
+										}
 									]
 								}
 							}

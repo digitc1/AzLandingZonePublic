@@ -66,13 +66,29 @@
 									"storageAccountId": "[parameters('storageAccountId')]",
 									"metrics": [
 										{
-											"category": "AllMetrics",
+											"category": "Basic",
 											"enabled": "True",
 											"retentionPolicy": {
 												"enabled": false,
 												"days": 0
 											}
-										}
+                                        },
+                                        {
+											"category": "InstanceAndAppAdvanced",
+											"enabled": "True",
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
+                                        },
+                                        {
+											"category": "WorkloadManagement",
+											"enabled": "True",
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
+                                        }
 									],
 									"logs": [
 										{
@@ -109,18 +125,6 @@
                                         },
                                         {
 											"category": "DeadLocks",
-											"enabled": "True"
-                                        },
-                                        {
-											"category": "Basic",
-											"enabled": "True"
-                                        },
-                                        {
-											"category": "InstanceAndAppAdvanced",
-											"enabled": "True"
-                                        },
-                                        {
-											"category": "WorkloadManagement",
 											"enabled": "True"
                                         }
 									]

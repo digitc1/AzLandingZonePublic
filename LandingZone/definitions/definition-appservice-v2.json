@@ -11,7 +11,7 @@
 			},
 			{
 				"field": "kind",
-				"like": "app*"
+				"equals": "app,linux"
 			}
 		]
 	},

@@ -8,6 +8,10 @@
 			{
 				"field": "location",
 				"like": "[parameters('region')]"
+			},
+			{
+				"field": "kind",
+				"equals": "functionapp"
 			}
 		]
 	},

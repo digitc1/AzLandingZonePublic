@@ -11,7 +11,7 @@
 			},
 			{
 				"field": "kind",
-				"like": "functionapp"
+				"match": "functionapp"
 			}
 		]
 	},

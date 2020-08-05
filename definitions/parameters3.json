@@ -1,0 +1,37 @@
+{
+	"region": {
+		"type": "String",
+        "metadata": {
+			"displayName": "Location",
+			"description": "Region where most of resources are deployed"
+        }
+    },
+    "eventHubRuleId": {
+        "type": "String",
+        "metadata": {
+            "displayName": "Event-hub authorization rule Id",
+            "description": "Id of Landing Zone's event-hub authorization rule"
+        }
+    },
+    "eventHubName":{
+        "type":"String",
+        "metadata": {
+            "displayName": "Event-hub name",
+            "description": "Name of the event-hub (default to 'insights-operational-logs')"
+        },
+        "defaultValue": "insights-operational-logs"
+    },
+    "effect": {
+        "type": "String",
+        "metadata": {
+            "displayName": "Effect",
+            "description": "Enable or Disable the execution of the policy"
+        },
+        "allowedValues":[
+            "AuditIfNotExists",
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "defaultValue": "DeployIfNotExists"
+    }
+}

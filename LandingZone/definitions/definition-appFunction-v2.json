@@ -79,7 +79,7 @@
 									],
 									"logs": [
 										{
-											"category": "functionAppLogs",
+											"category": "FunctionAppLogs",
 											"enabled": "True"
 										}
 									],

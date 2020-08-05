@@ -128,7 +128,7 @@
 											"enabled": "True"
                                         },
                                         {
-											"category": "DeadLocks",
+											"category": "Deadlocks",
 											"enabled": "True"
                                         }
 									]
@@ -141,7 +141,7 @@
 							"value": "[parameters('region')]"
 						},
 						"resourceName": {
-							"value": "[field('name')]"
+							"value": "[field('fullName')]"
 						},
 						"eventHubRuleId": {
                             "value": "[parameters('eventHubRuleId')]"

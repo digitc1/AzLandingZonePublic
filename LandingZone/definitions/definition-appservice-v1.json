@@ -11,7 +11,10 @@
 			},
 			{
 				"field": "kind",
-				"equals": "app,linux"
+				"in": [
+					"app,linux",
+					"app"
+				]
 			}
 		]
 	},

@@ -1,0 +1,9 @@
+{
+    "contactEmail": {
+        "type": "String",
+        "metadata": {
+            "displayName": "contact email",
+            "description": "email of the security contact"
+        }
+    }
+}

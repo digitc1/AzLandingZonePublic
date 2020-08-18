@@ -18,28 +18,52 @@
         "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
       ],
       "existenceCondition": {
-        "field": "Microsoft.Security/securityContacts/email",
-        "equals": "DIGIT-CLOUD-VIRTUAL-TASK-FORCE@ec.europa.eu"
+        "allOf":[
+          {
+            "field": "Microsoft.Security/securityContacts/alertsNotifications/state",
+            "equals": "On"
+          },
+          {
+            "field": "Microsoft.Security/securityContacts/notificationsByRole/state",
+            "equals": "On"
+          }
+        ]
       },
       "deployment": {
         "location": "westeurope",
         "properties": {
           "mode": "incremental",
-          "parameters": {},
+          "parameters": {
+              "contactEmail": {
+                  "value": "[parameters('contactEmail')]"
+              }
+          },
           "template": {
             "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
             "contentVersion": "1.0.0.0",
-            "parameters": {},
+            "parameters": {
+              "contactEmail": {
+                "type": "string"
+              }
+            },
             "variables": {},
             "resources": [
               {
-                "name": "default1",
+                "name": "default",
                 "type": "Microsoft.Security/securityContacts",
-                "apiVersion": "2017-08-01-preview",
+                "apiVersion": "2020-01-01-preview",
                 "properties": {
-                  "email": "DIGIT-CLOUD-VIRTUAL-TASK-FORCE@ec.europa.eu",
-                  "alertNotifications": "On",
-                  "alertsToAdmins": "On"
+                  "notificationsByRole": {
+                    "state": "On",
+                    "roles": [
+                      "Owner"
+                    ]
+                  },
+                  "emails": "[parameters('contactEmail')]",
+                  "alertNotifications": {
+                    "state": "On",
+                    "minimalSeverity": "Low"
+                  }
                 }
               }
             ],

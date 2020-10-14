@@ -26,7 +26,7 @@
                 },
                 { 
                     "principalId": "96308f3d-1de7-4662-beb6-de48565d78e1", 
-                    "roleDefinitionId": "fa23ad8b-c56e-40d8-ac0c-ce449e1d2c6",
+                    "roleDefinitionId": "fa23ad8b-c56e-40d8-ac0c-ce449e1d2c64",
                     "principalIdDisplayName": "DIGIT broker_billing"
                     
                 }

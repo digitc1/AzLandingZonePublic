@@ -1,0 +1,1 @@
+65e424dc-7c6a-4952-9a19-1c85bfc6a6cc,test,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/develop/definitions/sentinel/hunting/test.txt

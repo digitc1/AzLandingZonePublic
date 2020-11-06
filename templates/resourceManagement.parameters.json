@@ -1,0 +1,36 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "mspOfferName": {
+            "value": "DIGIT broker"
+        },
+        "mspOfferDescription": {
+            "value": "DIGIT broker"
+        },
+        "managedByTenantId": {
+            "value": "9cbf3803-fdf8-4278-bbe3-595b56e32a8d"
+        },
+        "authorizations": {
+            "value": [
+                { 
+                    "principalId": "611805fe-ce92-4469-b203-2b30259e1d19", 
+                    "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c",
+                    "principalIdDisplayName": "DIGIT broker_contributor" 
+                }, 
+                { 
+                    "principalId": "4415f198-6381-4967-966a-b5e100112120", 
+                    "roleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7",
+                    "principalIdDisplayName": "DIGIT broker_reader"
+                    
+                },
+                { 
+                    "principalId": "96308f3d-1de7-4662-beb6-de48565d78e1", 
+                    "roleDefinitionId": "fa23ad8b-c56e-40d8-ac0c-ce449e1d2c64",
+                    "principalIdDisplayName": "DIGIT broker_billing"
+                    
+                }
+            ]
+        }                
+    }
+}

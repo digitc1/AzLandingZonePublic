@@ -26,5 +26,6 @@ sqlManagedInstances,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePub
 sqlManagedInstDb,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/definition-sqlManagedInstancesDatabases-v1.json
 sqlServerDb,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/definition-sqlServerDatabases-v1.json
 streamAnalytics,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/definition-streamAnalytics-v1.json
+subscription,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/definition-subscription-v1.json
 virtualNetworkGw,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/definition-virtualNetworkGateways-v1.json
 workflows,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/definition-workflows-v1.json

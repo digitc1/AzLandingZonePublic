@@ -82,6 +82,10 @@
 										{
 											"category": "RequestResponse",
 											"enabled": "True"
+										},
+										{
+											"category": "Trace",
+											"enabled": "True"
 										}
 									]
 								}

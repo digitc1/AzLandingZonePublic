@@ -6,7 +6,7 @@ automationAccts,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/
 azureFirewalls,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/definition-azureFirewalls-v2.json
 bastionHosts,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/definition-bastionHosts-v2.json
 batchAccounts,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/definition-batchAccounts-v2.json
-cognitiveServices,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/definition-cognitiveServices-v2.json
+cognitiveServices,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/definition-cognitiveServices-v2.json
 dataLakeAnalytics,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/definition-dataLakeAnalytics-v2.json
 dataLakeStore,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/definition-dataLakeStore-v2.json
 eventHub,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/definition-eventHub-v2.json

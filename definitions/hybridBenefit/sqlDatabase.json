@@ -1,0 +1,21 @@
+{
+    "if": {
+      "allOf": [
+        {
+          "field": "type",
+          "equals": "Microsoft.Sql/servers/databases"
+        },
+        {
+          "field": "name",
+          "notEquals": "master"
+        },
+        {
+          "field": "Microsoft.Sql/servers/databases/licenseType",
+          "notEquals": "BasePrice"
+        }
+      ]
+    },
+    "then": {
+      "effect": "audit"
+    }
+}

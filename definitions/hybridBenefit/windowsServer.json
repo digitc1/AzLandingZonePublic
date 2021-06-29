@@ -1,0 +1,28 @@
+{
+  "if": {
+    "allOf": [
+      {
+        "field": "type",
+        "equals": "Microsoft.Compute/virtualMachines"
+      },
+      {
+        "field": "Microsoft.Compute/imagePublisher",
+        "equals": "MicrosoftWindowsServer"
+      },
+      {
+        "field": "Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType",
+        "equals": "Windows"
+      }
+    ]
+  },
+  "then": {
+    "effect": "auditIfNotExists",
+    "details": {
+      "type": "Microsoft.Compute/virtualMachines",
+      "existenceCondition": {
+        "field": "Microsoft.Compute/virtualMachines/licenseType",
+        "equals": "Windows_Server"
+      }
+    }
+  }
+}

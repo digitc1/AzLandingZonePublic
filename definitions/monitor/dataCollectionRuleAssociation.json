@@ -1,0 +1,79 @@
+{
+  "if": {
+    "field": "type",
+    "equals": "Microsoft.Compute/virtualMachines"
+  },
+  "then": {
+    "effect": "deployIfNotExists",
+    "details": {
+      "type": "Microsoft.Insights/dataCollectionRuleAssociations",
+      "existenceCondition": {
+        "field": "Microsoft.Insights/dataCollectionRuleAssociations/dataCollectionRuleId",
+        "equals": "[parameters('dataCollectionRuleId')]"
+      },
+      "roleDefinitionIds": [
+        "/providers/microsoft.authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+      ],
+      "deployment": {
+        "properties": {
+          "mode": "incremental",
+          "parameters": {
+            "dataCollectionRuleId": {
+              "value": "[parameters('dataCollectionRuleId')]"
+            },
+            "vmName": {
+              "value": "[field('name')]"
+            },
+            "region": {
+              "value": "[parameters('region')]"
+            },
+            "workspaceId": {
+              "value": "[parameters('workspaceId')]"
+            }
+          },
+          "template": {
+            "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+            "contentVersion": "1.0.0.0",
+            "parameters": {
+              "dataCollectionRuleId": {
+                "type": "String"
+              },
+              "vmName": {
+                "type": "String"
+              },
+              "region": {
+                "type": "String"
+              },
+              "workspaceId": {
+                "type": "String"
+              }
+            },
+            "resources": [
+              {
+                "type": "Microsoft.Compute/virtualMachines/extensions",
+                "name": "[concat(parameters('vmName'), '/AMALinux')]",
+                "apiVersion": "2019-07-01",
+                "location": "[parameters('region')]",
+                "properties": {
+                  "publisher": "Microsoft.Azure.Monitor",
+                  "type": "AzureMonitorLinuxAgent",
+                  "typeHandlerVersion": "1.0",
+                  "autoUpgradeMinorVersion": true
+                }
+              },
+              {
+                "type": "Microsoft.Compute/virtualMachines/providers/dataCollectionRuleAssociations",
+                "name": "[concat(parameters('vmName'),'/microsoft.insights/slzassociation')]",
+                "apiVersion": "2019-11-01-preview",
+                "properties": {
+                  "description": "Association of Data Collection Rule",
+                  "dataCollectionRuleId": "[parameters('dataCollectionRuleId')]"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

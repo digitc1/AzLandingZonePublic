@@ -1,0 +1,11 @@
+{
+  "dataCollectionRuleId": {
+    "type": "String"
+  },
+  "region": {
+    "type": "String"
+  },
+  "workspaceId": {
+    "type": "String"
+  }
+}

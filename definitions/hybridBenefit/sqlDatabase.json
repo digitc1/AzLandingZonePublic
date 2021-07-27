@@ -1,21 +1,33 @@
 {
-    "if": {
-      "allOf": [
+  "if": {
+    "allOf": [
+      {
+        "field": "type",
+        "equals": "Microsoft.Sql/servers/databases"
+      },
+      {
+        "field": "name",
+        "notEquals": "master"
+      },
+      {
+        "field": "Microsoft.Sql/servers/databases/licenseType",
+        "notEquals": "BasePrice"
+      }
+    ]
+  },
+  "then": {
+    "effect": "modify",
+    "details": {
+      "roleDefinitionIds": [
+        "/providers/microsoft.authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+      ],
+      "operations": [
         {
-          "field": "type",
-          "equals": "Microsoft.Sql/servers/databases"
-        },
-        {
-          "field": "name",
-          "notEquals": "master"
-        },
-        {
+          "operation": "addOrReplace",
           "field": "Microsoft.Sql/servers/databases/licenseType",
-          "notEquals": "BasePrice"
+          "value": "BasePrice"
         }
       ]
-    },
-    "then": {
-      "effect": "audit"
     }
+  }
 }

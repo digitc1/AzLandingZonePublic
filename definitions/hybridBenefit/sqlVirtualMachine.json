@@ -1,20 +1,29 @@
 {
-    "if": {
-      "allOf": [
+  "if": {
+    "allOf": [
+      {
+        "field": "type",
+        "equals": "Microsoft.SqlVirtualMachine/sqlVirtualMachines"
+      },
+      {
+        "field": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/sqlServerLicenseType",
+        "notEquals": "AHUB"
+      }
+    ]
+  },
+  "then": {
+    "effect": "modify",
+    "details": {
+      "roleDefinitionIds": [
+        "/providers/microsoft.authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+      ],
+      "operations": [
         {
-          "field": "type",
-          "equals": "Microsoft.SqlVirtualMachine/sqlVirtualMachines"
+          "operation": "addOrReplace",
+          "field": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/sqlServerLicenseType",
+          "value": "AHUB"
         }
       ]
-    },
-    "then": {
-      "effect": "auditIfNotExists",
-      "details": {
-        "type": "Microsoft.SqlVirtualMachine/sqlVirtualMachines",
-        "existenceCondition": {
-          "field": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/sqlServerLicenseType",
-          "equals": "AHUB"
-        }
-      }
     }
+  }
 }

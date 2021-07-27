@@ -6,23 +6,28 @@
         "equals": "Microsoft.Compute/virtualMachines"
       },
       {
-        "field": "Microsoft.Compute/imagePublisher",
+        "field": "Microsoft.Compute/virtualMachines/imagePublisher",
         "equals": "MicrosoftWindowsServer"
       },
       {
-        "field": "Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType",
-        "equals": "Windows"
+        "field": "Microsoft.Compute/virtualMachines/licenseType",
+        "notEquals": "Windows_Server"
       }
     ]
   },
   "then": {
-    "effect": "auditIfNotExists",
+    "effect": "modify",
     "details": {
-      "type": "Microsoft.Compute/virtualMachines",
-      "existenceCondition": {
-        "field": "Microsoft.Compute/virtualMachines/licenseType",
-        "equals": "Windows_Server"
-      }
+      "roleDefinitionIds": [
+        "/providers/microsoft.authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+      ],
+      "operations": [
+        {
+          "operation": "addOrReplace",
+          "field": "Microsoft.Compute/virtualMachines/licenseType",
+          "value": "Windows_Server"
+        }
+      ]
     }
   }
 }

@@ -50,10 +50,10 @@
 							},
 							"eventHubRuleId": {
 								"type": "string"
-                            },
-                            "eventHubName": {
-                                "type": "string"
-                            },
+							},
+							"eventHubName": {
+								"type": "string"
+							},
 							"effect": {
 								"type": "string"
 							}
@@ -66,8 +66,8 @@
 								"location": "[parameters('region')]",
 								"dependsOn": [],
 								"properties": {
-                                    "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
-                                    "eventHubName": "[parameters('eventHubName')]",
+									"eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
+									"eventHubName": "[parameters('eventHubName')]",
 									"metrics": [
 										{
 											"category": "AllMetrics",
@@ -82,59 +82,59 @@
 										{
 											"category": "Connections",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "DeviceTelemetry",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "C2DCommands",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "DeviceIdentityOperations",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "FileUploadOperations",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "Routes",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "D2CTwinOperations",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "C2DTwinOperations",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "TwinQueries",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "JobsOperations",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "DirectMethods",
 											"enabled": "True"
-                                        },
+										},
 										{
 											"category": "DistributedTracing",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "Configurations",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "DeviceStreams",
 											"enabled": "True"
-                                        }
+										}
 									]
 								}
 							}
@@ -148,11 +148,11 @@
 							"value": "[field('name')]"
 						},
 						"eventHubRuleId": {
-                            "value": "[parameters('eventHubRuleId')]"
-                        },
-                        "eventHubName": {
-                            "value": "[parameters('eventHubName')]"
-                        },
+							"value": "[parameters('eventHubRuleId')]"
+						},
+						"eventHubName": {
+							"value": "[parameters('eventHubName')]"
+						},
 						"effect": {
 							"value": "[parameters('effect')]"
 						}

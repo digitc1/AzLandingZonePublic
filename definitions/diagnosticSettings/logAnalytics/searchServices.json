@@ -77,7 +77,7 @@
 										{
 											"category": "OperationLogs",
 											"enabled": "True"
-                                        }
+										}
 									],
 									"workspaceId": "[parameters('workspaceId')]"
 								}

@@ -18,16 +18,16 @@
                 "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
             ],
             "existenceCondition": {
-				"allOf": [
-					{
-						"field": "Microsoft.Insights/diagnosticSettings/logs.enabled",
-						"equals": "True"
-					},
-					{
-                		"field": "Microsoft.Insights/diagnosticSettings/eventHubAuthorizationRuleId",
-                		"equals": "[parameters('eventHubRuleId')]"
-              		}
-				]	
+                "allOf": [
+                    {
+                        "field": "Microsoft.Insights/diagnosticSettings/logs.enabled",
+                        "equals": "True"
+                    },
+                    {
+                        "field": "Microsoft.Insights/diagnosticSettings/eventHubAuthorizationRuleId",
+                        "equals": "[parameters('eventHubRuleId')]"
+                    }
+                ]
             },
             "deployment": {
                 "location": "westeurope",
@@ -40,7 +40,7 @@
                         "eventHubRuleId": {
                             "value": "[parameters('eventHubRuleId')]"
                         },
-						"eventHubName": {
+                        "eventHubName": {
                             "value": "[parameters('eventHubName')]"
                         },
                         "effect": {
@@ -51,18 +51,18 @@
                         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
-							"region": {
-								"type": "string"
-							},
-							"eventHubRuleId": {
-								"type": "string"
-							},
-							"eventHubName": {
+                            "region": {
                                 "type": "string"
                             },
-							"effect": {
-								"type": "string"
-							}
+                            "eventHubRuleId": {
+                                "type": "string"
+                            },
+                            "eventHubName": {
+                                "type": "string"
+                            },
+                            "effect": {
+                                "type": "string"
+                            }
                         },
                         "variables": {},
                         "resources": [

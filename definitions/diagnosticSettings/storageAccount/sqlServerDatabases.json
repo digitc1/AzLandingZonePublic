@@ -26,10 +26,10 @@
 						"field": "Microsoft.Insights/diagnosticSettings/metrics.enabled",
 						"equals": "True"
 					},
-              		{
-                		"field": "Microsoft.Insights/diagnosticSettings/storageAccountId",
-                		"equals": "[parameters('storageAccountId')]"
-              		}
+					{
+						"field": "Microsoft.Insights/diagnosticSettings/storageAccountId",
+						"equals": "[parameters('storageAccountId')]"
+					}
 				]
 			},
 			"roleDefinitionIds": [
@@ -72,61 +72,61 @@
 												"enabled": false,
 												"days": 0
 											}
-                                        },
-                                        {
+										},
+										{
 											"category": "InstanceAndAppAdvanced",
 											"enabled": "True",
 											"retentionPolicy": {
 												"enabled": false,
 												"days": 0
 											}
-                                        },
-                                        {
+										},
+										{
 											"category": "WorkloadManagement",
 											"enabled": "True",
 											"retentionPolicy": {
 												"enabled": false,
 												"days": 0
 											}
-                                        }
+										}
 									],
 									"logs": [
 										{
 											"category": "SQLInsights",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AutomaticTuning",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "QueryStoreWaitStatistics",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "QueryStoreRuntimeStatistics",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "Errors",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "DatabaseWaitStatistics",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "Timeouts",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "Blocks",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "Deadlocks",
 											"enabled": "True"
-                                        }
+										}
 									]
 								}
 							}

@@ -77,8 +77,8 @@
 										{
 											"category": "Execution",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "Authoring",
 											"enabled": "True"
 										}

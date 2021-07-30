@@ -77,11 +77,11 @@
 										{
 											"category": "Engine",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "Service",
 											"enabled": "True"
-                                        }
+										}
 									],
 									"workspaceId": "[parameters('workspaceId')]"
 								}

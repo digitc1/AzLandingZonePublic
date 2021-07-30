@@ -22,10 +22,10 @@
 						"field": "Microsoft.Insights/diagnosticSettings/logs.enabled",
 						"equals": "True"
 					},
-              		{
-                		"field": "Microsoft.Insights/diagnosticSettings/storageAccountId",
-                		"equals": "[parameters('storageAccountId')]"
-              		}
+					{
+						"field": "Microsoft.Insights/diagnosticSettings/storageAccountId",
+						"equals": "[parameters('storageAccountId')]"
+					}
 				]
 			},
 			"roleDefinitionIds": [
@@ -64,7 +64,7 @@
 										{
 											"category": "BastionAuditLogs",
 											"enabled": "True"
-                                        }
+										}
 									]
 								}
 							}

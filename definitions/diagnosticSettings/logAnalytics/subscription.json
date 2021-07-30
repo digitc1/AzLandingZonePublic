@@ -18,16 +18,16 @@
                 "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
             ],
             "existenceCondition": {
-				"allOf": [
-					{
-						"field": "Microsoft.Insights/diagnosticSettings/logs.enabled",
-						"equals": "True"
-					},
-					{
-						"field": "Microsoft.Insights/diagnosticSettings/workspaceId",
-						"equals": "[parameters('workspaceId')]"
-					}
-				]
+                "allOf": [
+                    {
+                        "field": "Microsoft.Insights/diagnosticSettings/logs.enabled",
+                        "equals": "True"
+                    },
+                    {
+                        "field": "Microsoft.Insights/diagnosticSettings/workspaceId",
+                        "equals": "[parameters('workspaceId')]"
+                    }
+                ]
             },
             "deployment": {
                 "location": "westeurope",
@@ -48,15 +48,15 @@
                         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
-							"region": {
-								"type": "string"
-							},
-							"workspaceId": {
-								"type": "string"
-							},
-							"effect": {
-								"type": "string"
-							}
+                            "region": {
+                                "type": "string"
+                            },
+                            "workspaceId": {
+                                "type": "string"
+                            },
+                            "effect": {
+                                "type": "string"
+                            }
                         },
                         "variables": {},
                         "resources": [

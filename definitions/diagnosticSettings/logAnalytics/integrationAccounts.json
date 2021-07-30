@@ -67,7 +67,7 @@
 										{
 											"category": "IntegrationAccountTrackingEvents",
 											"enabled": "True"
-                                        }
+										}
 									],
 									"workspaceId": "[parameters('workspaceId')]"
 								}

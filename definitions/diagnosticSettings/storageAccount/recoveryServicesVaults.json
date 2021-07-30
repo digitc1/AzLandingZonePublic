@@ -22,10 +22,10 @@
 						"field": "Microsoft.Insights/diagnosticSettings/logs.enabled",
 						"equals": "True"
 					},
-              		{
-                		"field": "Microsoft.Insights/diagnosticSettings/storageAccountId",
-                		"equals": "[parameters('storageAccountId')]"
-              		}
+					{
+						"field": "Microsoft.Insights/diagnosticSettings/storageAccountId",
+						"equals": "[parameters('storageAccountId')]"
+					}
 				]
 			},
 			"roleDefinitionIds": [
@@ -64,59 +64,59 @@
 										{
 											"category": "AzureBackupReport",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AzureSiteRecoveryJobs",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AzureSiteRecoveryEvents",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AzureSiteRecoveryReplicatedItems",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AzureSiteRecoveryReplicationStats",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AzureSiteRecoveryRecoveryPoints",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AzureSiteRecoveryReplicationDataUploadRate",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AzureSiteRecoveryProtectedDiskDataChurn",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "CoreAzureBackup",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AddonAzureBackupJobs",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AddonAzureBackupAlerts",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AddonAzureBackupPolicy",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AddonAzureBackupStorage",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AddonAzureBackupProtectedInstance",
 											"enabled": "True"
-                                        }
+										}
 									]
 								}
 							}

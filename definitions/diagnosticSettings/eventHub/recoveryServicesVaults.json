@@ -46,10 +46,10 @@
 							},
 							"eventHubRuleId": {
 								"type": "string"
-                            },
-                            "eventHubName": {
-                                "type": "string"
-                            },
+							},
+							"eventHubName": {
+								"type": "string"
+							},
 							"effect": {
 								"type": "string"
 							}
@@ -62,65 +62,65 @@
 								"location": "[parameters('region')]",
 								"dependsOn": [],
 								"properties": {
-                                    "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
-                                    "eventHubName": "[parameters('eventHubName')]",
+									"eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
+									"eventHubName": "[parameters('eventHubName')]",
 									"logs": [
 										{
 											"category": "AzureBackupReport",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AzureSiteRecoveryJobs",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AzureSiteRecoveryEvents",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AzureSiteRecoveryReplicatedItems",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AzureSiteRecoveryReplicationStats",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AzureSiteRecoveryRecoveryPoints",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AzureSiteRecoveryReplicationDataUploadRate",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AzureSiteRecoveryProtectedDiskDataChurn",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "CoreAzureBackup",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AddonAzureBackupJobs",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AddonAzureBackupAlerts",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AddonAzureBackupPolicy",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AddonAzureBackupStorage",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AddonAzureBackupProtectedInstance",
 											"enabled": "True"
-                                        }
+										}
 									]
 								}
 							}
@@ -134,11 +134,11 @@
 							"value": "[field('name')]"
 						},
 						"eventHubRuleId": {
-                            "value": "[parameters('eventHubRuleId')]"
-                        },
-                        "eventHubName": {
-                            "value": "[parameters('eventHubName')]"
-                        },
+							"value": "[parameters('eventHubRuleId')]"
+						},
+						"eventHubName": {
+							"value": "[parameters('eventHubName')]"
+						},
 						"effect": {
 							"value": "[parameters('effect')]"
 						}

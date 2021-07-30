@@ -26,10 +26,10 @@
 						"field": "Microsoft.Insights/diagnosticSettings/metrics.enabled",
 						"equals": "True"
 					},
-              		{
-                		"field": "Microsoft.Insights/diagnosticSettings/storageAccountId",
-                		"equals": "[parameters('storageAccountId')]"
-              		}
+					{
+						"field": "Microsoft.Insights/diagnosticSettings/storageAccountId",
+						"equals": "[parameters('storageAccountId')]"
+					}
 				]
 			},
 			"roleDefinitionIds": [
@@ -78,59 +78,59 @@
 										{
 											"category": "Connections",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "DeviceTelemetry",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "C2DCommands",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "DeviceIdentityOperations",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "FileUploadOperations",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "Routes",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "D2CTwinOperations",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "C2DTwinOperations",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "TwinQueries",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "JobsOperations",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "DirectMethods",
 											"enabled": "True"
-                                        },
+										},
 										{
 											"category": "DistributedTracing",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "Configurations",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "DeviceStreams",
 											"enabled": "True"
-                                        }
+										}
 									]
 								}
 							}

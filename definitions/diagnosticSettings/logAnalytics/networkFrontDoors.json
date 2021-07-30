@@ -77,11 +77,11 @@
 										{
 											"category": "FrontdoorAccessLog",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "FrontdoorWebApplicationFirewallLog",
 											"enabled": "True"
-                                        }
+										}
 									],
 									"workspaceId": "[parameters('workspaceId')]"
 								}

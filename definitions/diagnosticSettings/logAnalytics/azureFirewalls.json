@@ -77,11 +77,11 @@
 										{
 											"category": "AzureFirewallApplicationRule",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AzureFirewallNetworkRule",
 											"enabled": "True"
-                                        }
+										}
 									],
 									"workspaceId": "[parameters('workspaceId')]"
 								}

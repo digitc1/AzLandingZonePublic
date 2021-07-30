@@ -46,10 +46,10 @@
 							},
 							"eventHubRuleId": {
 								"type": "string"
-                            },
-                            "eventHubName": {
-                                "type": "string"
-                            },
+							},
+							"eventHubName": {
+								"type": "string"
+							},
 							"effect": {
 								"type": "string"
 							}
@@ -62,8 +62,8 @@
 								"location": "[parameters('region')]",
 								"dependsOn": [],
 								"properties": {
-                                    "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
-                                    "eventHubName": "[parameters('eventHubName')]",
+									"eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
+									"eventHubName": "[parameters('eventHubName')]",
 									"logs": [
 										{
 											"category": "BastionAuditLogs",
@@ -82,11 +82,11 @@
 							"value": "[field('name')]"
 						},
 						"eventHubRuleId": {
-                            "value": "[parameters('eventHubRuleId')]"
-                        },
-                        "eventHubName": {
-                            "value": "[parameters('eventHubName')]"
-                        },
+							"value": "[parameters('eventHubRuleId')]"
+						},
+						"eventHubName": {
+							"value": "[parameters('eventHubName')]"
+						},
 						"effect": {
 							"value": "[parameters('effect')]"
 						}

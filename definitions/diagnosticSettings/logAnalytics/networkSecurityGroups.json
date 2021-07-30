@@ -67,11 +67,11 @@
 										{
 											"category": "NetworkSecurityGroupEvent",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "NetworkSecurityGroupRuleCounter",
 											"enabled": "True"
-                                        }
+										}
 									],
 									"workspaceId": "[parameters('workspaceId')]"
 								}

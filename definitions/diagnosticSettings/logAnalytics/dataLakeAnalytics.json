@@ -77,8 +77,8 @@
 										{
 											"category": "Audit",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "Request",
 											"enabled": "True"
 										}

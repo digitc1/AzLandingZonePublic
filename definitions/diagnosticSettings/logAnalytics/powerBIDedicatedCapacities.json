@@ -77,7 +77,7 @@
 										{
 											"category": "Engine",
 											"enabled": "True"
-                                        }
+										}
 									],
 									"workspaceId": "[parameters('workspaceId')]"
 								}

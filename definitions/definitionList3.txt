@@ -25,6 +25,7 @@ serviceBus,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/maste
 sqlManagedInstances,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/sqlManagedInstances.json
 sqlManagedInstDb,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/sqlManagedInstancesDatabases.json
 sqlServerDb,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/sqlServerDatabases.json
+storageAccounts,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/storageAccounts.json
 streamAnalytics,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/streamAnalytics.json
 subscription,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/subscription.json
 virtualNetworkGw,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/virtualNetworkGateways.json

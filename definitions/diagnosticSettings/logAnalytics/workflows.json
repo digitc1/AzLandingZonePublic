@@ -77,7 +77,7 @@
 										{
 											"category": "WorkflowRuntime",
 											"enabled": "True"
-                                        }
+										}
 									],
 									"workspaceId": "[parameters('workspaceId')]"
 								}

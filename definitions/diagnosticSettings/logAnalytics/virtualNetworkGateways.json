@@ -77,23 +77,23 @@
 										{
 											"category": "GatewayDiagnosticLog",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "TunnelDiagnosticLog",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "RouteDiagnosticLog",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "IKEDiagnosticLog",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "P2SDiagnosticLog",
 											"enabled": "True"
-                                        }
+										}
 									],
 									"workspaceId": "[parameters('workspaceId')]"
 								}

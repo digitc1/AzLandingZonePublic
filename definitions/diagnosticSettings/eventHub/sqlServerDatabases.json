@@ -50,10 +50,10 @@
 							},
 							"eventHubRuleId": {
 								"type": "string"
-                            },
-                            "eventHubName": {
-                                "type": "string"
-                            },
+							},
+							"eventHubName": {
+								"type": "string"
+							},
 							"effect": {
 								"type": "string"
 							}
@@ -66,8 +66,8 @@
 								"location": "[parameters('region')]",
 								"dependsOn": [],
 								"properties": {
-                                    "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
-                                    "eventHubName": "[parameters('eventHubName')]",
+									"eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
+									"eventHubName": "[parameters('eventHubName')]",
 									"metrics": [
 										{
 											"category": "Basic",
@@ -76,61 +76,61 @@
 												"enabled": false,
 												"days": 0
 											}
-                                        },
-                                        {
+										},
+										{
 											"category": "InstanceAndAppAdvanced",
 											"enabled": "True",
 											"retentionPolicy": {
 												"enabled": false,
 												"days": 0
 											}
-                                        },
-                                        {
+										},
+										{
 											"category": "WorkloadManagement",
 											"enabled": "True",
 											"retentionPolicy": {
 												"enabled": false,
 												"days": 0
 											}
-                                        }
+										}
 									],
 									"logs": [
 										{
 											"category": "SQLInsights",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AutomaticTuning",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "QueryStoreWaitStatistics",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "QueryStoreRuntimeStatistics",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "Errors",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "DatabaseWaitStatistics",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "Timeouts",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "Blocks",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "Deadlocks",
 											"enabled": "True"
-                                        }
+										}
 									]
 								}
 							}
@@ -144,11 +144,11 @@
 							"value": "[field('fullName')]"
 						},
 						"eventHubRuleId": {
-                            "value": "[parameters('eventHubRuleId')]"
-                        },
-                        "eventHubName": {
-                            "value": "[parameters('eventHubName')]"
-                        },
+							"value": "[parameters('eventHubRuleId')]"
+						},
+						"eventHubName": {
+							"value": "[parameters('eventHubName')]"
+						},
 						"effect": {
 							"value": "[parameters('effect')]"
 						}

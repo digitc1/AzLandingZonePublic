@@ -67,16 +67,16 @@
 										{
 											"category": "SQLInsights",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "QueryStoreRuntimeStatistics",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "QueryStoreWaitStatistics",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "Errors",
 											"enabled": "True"
 										}

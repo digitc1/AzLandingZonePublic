@@ -26,10 +26,10 @@
 						"field": "Microsoft.Insights/diagnosticSettings/metrics.enabled",
 						"equals": "True"
 					},
-              		{
-                		"field": "Microsoft.Insights/diagnosticSettings/storageAccountId",
-                		"equals": "[parameters('storageAccountId')]"
-              		}
+					{
+						"field": "Microsoft.Insights/diagnosticSettings/storageAccountId",
+						"equals": "[parameters('storageAccountId')]"
+					}
 				]
 			},
 			"roleDefinitionIds": [
@@ -79,11 +79,11 @@
 											"category": "ApplicationGatewayAccessLog",
 											"enabled": "True"
 										},
-                    					{
+										{
 											"category": "ApplicationGatewayPerformanceLog",
 											"enabled": "True"
 										},
-                    					{
+										{
 											"category": "ApplicationGatewayFirewallLog",
 											"enabled": "True"
 										}

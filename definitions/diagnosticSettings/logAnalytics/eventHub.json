@@ -77,31 +77,31 @@
 										{
 											"category": "ArchiveLogs",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "OperationalLogs",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "AutoScaleLogs",
 											"enabled": "True"
-                                        },
-                                        {
-                                            "category": "KafkaCoordinatorLogs",
-                                            "enabled": "True"
-                                        },
-                                        {
-                                            "category": "KafkaUserErrorLogs",
-                                            "enabled": "True"
-                                        },
-                                        {
-                                            "category": "EventHubVNetConnectionEvent",
-                                            "enabled": "True"
-                                        },
-                                        {
-                                            "category": "CustomerManagedKeyUserLogs",
-                                            "enabled": "True"
-                                        }
+										},
+										{
+											"category": "KafkaCoordinatorLogs",
+											"enabled": "True"
+										},
+										{
+											"category": "KafkaUserErrorLogs",
+											"enabled": "True"
+										},
+										{
+											"category": "EventHubVNetConnectionEvent",
+											"enabled": "True"
+										},
+										{
+											"category": "CustomerManagedKeyUserLogs",
+											"enabled": "True"
+										}
 									],
 									"workspaceId": "[parameters('workspaceId')]"
 								}

@@ -78,11 +78,11 @@
 											"category": "ApplicationGatewayAccessLog",
 											"enabled": "True"
 										},
-                    					{
+										{
 											"category": "ApplicationGatewayPerformanceLog",
 											"enabled": "True"
 										},
-                    					{
+										{
 											"category": "ApplicationGatewayFirewallLog",
 											"enabled": "True"
 										}

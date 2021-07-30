@@ -67,8 +67,8 @@
 										{
 											"category": "ResourceUsageStats",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "SQLSecurityAuditEvents",
 											"enabled": "True"
 										}

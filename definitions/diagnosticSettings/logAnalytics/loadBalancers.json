@@ -77,11 +77,11 @@
 										{
 											"category": "LoadBalancerAlertEvent",
 											"enabled": "True"
-                                        },
-                                        {
+										},
+										{
 											"category": "LoadBalancerProbeHealthStatus",
 											"enabled": "True"
-                                        }
+										}
 									],
 									"workspaceId": "[parameters('workspaceId')]"
 								}

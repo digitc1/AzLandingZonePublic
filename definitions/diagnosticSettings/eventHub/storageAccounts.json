@@ -1,0 +1,226 @@
+{
+    "if": {
+        "allOf": [
+            {
+                "field": "type",
+                "equals": "Microsoft.Storage/storageAccounts"
+            },
+            {
+                "field": "location",
+                "like": "[parameters('region')]"
+            }
+        ]
+    },
+    "then": {
+        "effect": "[parameters('effect')]",
+        "details": {
+            "type": "Microsoft.Insights/diagnosticSettings",
+            "name": "setByPolicy-eventHub",
+            "existenceCondition": {
+                "allOf": [
+                    {
+                        "field": "Microsoft.Insights/diagnosticSettings/logs.enabled",
+                        "equals": "True"
+                    },
+                    {
+                        "field": "Microsoft.Insights/diagnosticSettings/metrics.enabled",
+                        "equals": "True"
+                    },
+                    {
+                        "field": "Microsoft.Insights/diagnosticSettings/eventHubAuthorizationRuleId",
+                        "equals": "[parameters('eventHubRuleId')]"
+                    }
+                ]
+            },
+            "roleDefinitionIds": [
+                "/providers/microsoft.authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+            ],
+            "deployment": {
+                "properties": {
+                    "mode": "incremental",
+                    "template": {
+                        "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                        "contentVersion": "1.0.0.0",
+                        "parameters": {
+                            "resourceName": {
+                                "type": "string"
+                            },
+                            "region": {
+                                "type": "string"
+                            },
+                            "eventHubRuleId": {
+                                "type": "string"
+                            },
+                            "eventHubName": {
+                                "type": "string"
+                            },
+                            "effect": {
+                                "type": "string"
+                            }
+                        },
+                        "resources": [
+                            {
+                                "type": "Microsoft.Storage/storageAccounts/blobServices/providers/diagnosticSettings",
+                                "apiVersion": "2017-05-01-preview",
+                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-eventHub')]",
+                                "location": "[parameters('region')]",
+                                "dependsOn": [],
+                                "properties": {
+                                    "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
+                                    "eventHubName": "[parameters('eventHubName')]",
+                                    "metrics": [
+                                        {
+                                            "category": "Transaction",
+                                            "enabled": "True"
+                                        }
+                                    ],
+                                    "logs": [
+                                        {
+                                            "category": "StorageRead",
+                                            "enabled": "true"
+                                        },
+                                        {
+                                            "category": "StorageWrite",
+                                            "enabled": "true"
+                                        },
+                                        {
+                                            "category": "StorageDelete",
+                                            "enabled": "true"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Microsoft.Storage/storageAccounts/fileServices/providers/diagnosticSettings",
+                                "apiVersion": "2017-05-01-preview",
+                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-eventHub')]",
+                                "location": "[parameters('region')]",
+                                "dependsOn": [],
+                                "properties": {
+                                    "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
+                                    "eventHubName": "[parameters('eventHubName')]",
+                                    "metrics": [
+                                        {
+                                            "category": "Transaction",
+                                            "enabled": "True"
+                                        }
+                                    ],
+                                    "logs": [
+                                        {
+                                            "category": "StorageRead",
+                                            "enabled": "true"
+                                        },
+                                        {
+                                            "category": "StorageWrite",
+                                            "enabled": "true"
+                                        },
+                                        {
+                                            "category": "StorageDelete",
+                                            "enabled": "true"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Microsoft.Storage/storageAccounts/tableServices/providers/diagnosticSettings",
+                                "apiVersion": "2017-05-01-preview",
+                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-eventHub')]",
+                                "location": "[parameters('region')]",
+                                "dependsOn": [],
+                                "properties": {
+                                    "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
+                                    "eventHubName": "[parameters('eventHubName')]",
+                                    "metrics": [
+                                        {
+                                            "category": "Transaction",
+                                            "enabled": "True"
+                                        }
+                                    ],
+                                    "logs": [
+                                        {
+                                            "category": "StorageRead",
+                                            "enabled": "true"
+                                        },
+                                        {
+                                            "category": "StorageWrite",
+                                            "enabled": "true"
+                                        },
+                                        {
+                                            "category": "StorageDelete",
+                                            "enabled": "true"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Microsoft.Storage/storageAccounts/queueServices/providers/diagnosticSettings",
+                                "apiVersion": "2017-05-01-preview",
+                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-eventHub')]",
+                                "location": "[parameters('region')]",
+                                "dependsOn": [],
+                                "properties": {
+                                    "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
+                                    "eventHubName": "[parameters('eventHubName')]",
+                                    "metrics": [
+                                        {
+                                            "category": "Transaction",
+                                            "enabled": "True"
+                                        }
+                                    ],
+                                    "logs": [
+                                        {
+                                            "category": "StorageRead",
+                                            "enabled": "true"
+                                        },
+                                        {
+                                            "category": "StorageWrite",
+                                            "enabled": "true"
+                                        },
+                                        {
+                                            "category": "StorageDelete",
+                                            "enabled": "true"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Microsoft.Storage/storageAccounts/providers/diagnosticSettings",
+                                "apiVersion": "2017-05-01-preview",
+                                "name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/setByPolicy-eventHub')]",
+                                "location": "[parameters('region')]",
+                                "dependsOn": [],
+                                "properties": {
+                                    "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
+                                    "eventHubName": "[parameters('eventHubName')]",
+                                    "metrics": [
+                                        {
+                                            "category": "Transaction",
+                                            "enabled": "True"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    "parameters": {
+                        "resourceName": {
+                            "value": "[field('name')]"
+                        },
+                        "region": {
+                            "value": "[parameters('region')]"
+                        },
+                        "eventHubRuleId": {
+                            "value": "[parameters('eventHubRuleId')]"
+                        },
+                        "eventHubName": {
+                            "value": "[parameters('eventHubName')]"
+                        },
+                        "effect": {
+                            "value": "[parameters('effect')]"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,4 @@
+AHUBWindowssrv,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/hybridBenefit/windowsServer.json
+AHUBWindows,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/hybridBenefit/windowsClient.json
+AHUBSQLdb,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/hybridBenefit/sqlDatabase.json
+AHUBSQLvm,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/hybridBenefit/sqlVirtualMachine.json

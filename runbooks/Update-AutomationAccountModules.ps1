@@ -39,11 +39,9 @@ https://docs.microsoft.com/en-us/azure/automation/automation-update-azure-module
 
 [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseApprovedVerbs", "")]
 param(
-    [Parameter(Mandatory = $true)]
-    [string] $ResourceGroupName,
+    [string] $ResourceGroupName = "lzslz_rg",
 
-    [Parameter(Mandatory = $true)]
-    [string] $AutomationAccountName,
+    [string] $AutomationAccountName = "lzslzAutomation",
 
     [int] $SimultaneousModuleImportJobCount = 10,
 

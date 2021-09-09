@@ -15,7 +15,7 @@
 		"effect": "[parameters('effect')]",
 		"details": {
 			"type": "Microsoft.Insights/diagnosticSettings",
-			"name": "setByPolicy-workspace",
+			"name": "setByPolicy-storageAccount",
 			"existenceCondition": {
 				"allOf": [
 					{
@@ -27,8 +27,8 @@
 						"equals": "True"
 					},
 					{
-						"field": "Microsoft.Insights/diagnosticSettings/workspaceId",
-						"equals": "[parameters('workspaceId')]"
+						"field": "Microsoft.Insights/diagnosticSettings/storageAccountId",
+						"equals": "[parameters('storageAccountId')]"
 					}
 				]
 			},
@@ -48,7 +48,7 @@
 							"region": {
 								"type": "string"
 							},
-							"workspaceId": {
+							"storageAccountId": {
 								"type": "string"
 							},
 							"effect": {
@@ -59,10 +59,11 @@
 							{
 								"type": "Microsoft.ServiceBus/namespaces/providers/diagnosticSettings",
 								"apiVersion": "2017-05-01-preview",
-								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-workspace')]",
+								"name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/setByPolicy-storageAccount')]",
 								"location": "[parameters('region')]",
 								"dependsOn": [],
 								"properties": {
+									"storageAccountId": "[parameters('storageAccountId')]",
 									"metrics": [
 										{
 											"category": "AllMetrics",
@@ -75,15 +76,34 @@
 									],
 									"logs": [
 										{
-											"category": "OperationalLogs",
+											"category": "kube-apiserver",
 											"enabled": "True"
 										},
 										{
-											"category": "VNetAndIPFilteringLogs",
+											"category": "kube-audit",
+											"enabled": "True"
+										},
+										{
+											"category": "kube-audit-admin",
+											"enabled": "True"
+										},
+										{
+											"category": "kube-controller-manager",
+											"enabled": "True"
+										},
+										{
+											"category": "kube-scheduler",
+											"enabled": "True"
+										},
+										{
+											"category": "cluster-autoscaler",
+											"enabled": "True"
+										},
+										{
+											"category": "guard",
 											"enabled": "True"
 										}
-									],
-									"workspaceId": "[parameters('workspaceId')]"
+									]
 								}
 							}
 						]
@@ -95,8 +115,8 @@
 						"resourceName": {
 							"value": "[field('name')]"
 						},
-						"workspaceId": {
-							"value": "[parameters('workspaceId')]"
+						"storageAccountId": {
+							"value": "[parameters('storageAccountId')]"
 						},
 						"effect": {
 							"value": "[parameters('effect')]"

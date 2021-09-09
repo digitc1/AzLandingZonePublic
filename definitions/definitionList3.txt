@@ -13,6 +13,7 @@ eventHub,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/
 integrationAccts,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/integrationAccounts.json
 IotHubs,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/IoTHubs.json
 keyVaults,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/keyVaults.json
+kubernetes,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/kubernetes.json
 loadBalancers,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/loadBalancers.json
 netFrontDoors,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/networkFrontDoors.json
 networkInterfaces,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/networkInterfaces.json
@@ -21,7 +22,7 @@ powerBIDedicated,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic
 publicIP,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/publicIP.json
 recoveryServVaults,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/recoveryServicesVaults.json
 searchServices,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/searchServices.json
-serviceBus,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/serviceBusNamespaces.json
+serviceBus,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/serviceBusNamespaces.json
 sqlManagedInstances,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/sqlManagedInstances.json
 sqlManagedInstDb,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/sqlManagedInstancesDatabases.json
 sqlServerDb,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/sqlServerDatabases.json

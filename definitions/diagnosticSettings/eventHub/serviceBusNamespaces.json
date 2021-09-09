@@ -82,6 +82,10 @@
 										{
 											"category": "OperationalLogs",
 											"enabled": "True"
+										},
+										{
+											"category": "VNetAndIPFilteringLogs",
+											"enabled": "True"
 										}
 									]
 								}

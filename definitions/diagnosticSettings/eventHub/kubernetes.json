@@ -15,7 +15,7 @@
 		"effect": "[parameters('effect')]",
 		"details": {
 			"type": "Microsoft.Insights/diagnosticSettings",
-			"name": "setByPolicy-workspace",
+			"name": "setByPolicy-eventHub",
 			"existenceCondition": {
 				"allOf": [
 					{
@@ -27,8 +27,8 @@
 						"equals": "True"
 					},
 					{
-						"field": "Microsoft.Insights/diagnosticSettings/workspaceId",
-						"equals": "[parameters('workspaceId')]"
+						"field": "Microsoft.Insights/diagnosticSettings/eventHubAuthorizationRuleId",
+						"equals": "[parameters('eventHubRuleId')]"
 					}
 				]
 			},
@@ -48,7 +48,10 @@
 							"region": {
 								"type": "string"
 							},
-							"workspaceId": {
+							"eventHubRuleId": {
+								"type": "string"
+							},
+							"eventHubName": {
 								"type": "string"
 							},
 							"effect": {
@@ -57,12 +60,14 @@
 						},
 						"resources": [
 							{
-								"type": "Microsoft.ServiceBus/namespaces/providers/diagnosticSettings",
+								"type": "Microsoft.serviceBus/namespaces/providers/diagnosticSettings",
 								"apiVersion": "2017-05-01-preview",
-								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-workspace')]",
+								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-eventHub')]",
 								"location": "[parameters('region')]",
 								"dependsOn": [],
 								"properties": {
+									"eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
+									"eventHubName": "[parameters('eventHubName')]",
 									"metrics": [
 										{
 											"category": "AllMetrics",
@@ -82,8 +87,7 @@
 											"category": "VNetAndIPFilteringLogs",
 											"enabled": "True"
 										}
-									],
-									"workspaceId": "[parameters('workspaceId')]"
+									]
 								}
 							}
 						]
@@ -95,8 +99,11 @@
 						"resourceName": {
 							"value": "[field('name')]"
 						},
-						"workspaceId": {
-							"value": "[parameters('workspaceId')]"
+						"eventHubRuleId": {
+							"value": "[parameters('eventHubRuleId')]"
+						},
+						"eventHubName": {
+							"value": "[parameters('eventHubName')]"
 						},
 						"effect": {
 							"value": "[parameters('effect')]"

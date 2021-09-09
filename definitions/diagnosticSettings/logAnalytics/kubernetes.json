@@ -3,7 +3,7 @@
 		"allOf": [
 			{
 				"field": "type",
-				"equals": "Microsoft.ServiceBus/namespaces"
+				"equals": "Microsoft.ContainerService/managedClusters"
 			},
 			{
 				"field": "location",
@@ -57,7 +57,7 @@
 						},
 						"resources": [
 							{
-								"type": "Microsoft.ServiceBus/namespaces/providers/diagnosticSettings",
+								"type": "Microsoft.ContainerService/managedClusters/providers/diagnosticSettings",
 								"apiVersion": "2017-05-01-preview",
 								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-workspace')]",
 								"location": "[parameters('region')]",
@@ -75,11 +75,31 @@
 									],
 									"logs": [
 										{
-											"category": "OperationalLogs",
+											"category": "kube-apiserver",
 											"enabled": "True"
 										},
 										{
-											"category": "VNetAndIPFilteringLogs",
+											"category": "kube-audit",
+											"enabled": "True"
+										},
+										{
+											"category": "kube-audit-admin",
+											"enabled": "True"
+										},
+										{
+											"category": "kube-controller-manager",
+											"enabled": "True"
+										},
+										{
+											"category": "kube-scheduler",
+											"enabled": "True"
+										},
+										{
+											"category": "cluster-autoscaler",
+											"enabled": "True"
+										},
+										{
+											"category": "guard",
 											"enabled": "True"
 										}
 									],

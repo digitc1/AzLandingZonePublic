@@ -9,6 +9,7 @@ batchAccounts,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/ma
 cognitiveServices,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/cognitiveServices.json
 dataLakeAnalytics,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/dataLakeAnalytics.json
 dataLakeStore,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/dataLakeStore.json
+domainServices,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/domainServices.json
 eventHub,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/eventHub.json
 integrationAccts,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/integrationAccounts.json
 IotHubs,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/IoTHubs.json

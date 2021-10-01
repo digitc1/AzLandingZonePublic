@@ -86,6 +86,10 @@
 										{
 											"category": "DscNodeStatus",
 											"enabled": "True"
+										},
+										{
+											"category": "AuditEvent",
+											"enabled": "True"
 										}
 									]
 								}

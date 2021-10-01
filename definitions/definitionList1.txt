@@ -2,7 +2,7 @@ analysisServices,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic
 appFunction,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/appFunction.json
 appGateways,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/applicationGateways.json
 appService,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/appService.json
-automationAccts,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/automationAccounts.json
+automationAccts,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/automationAccounts.json
 azureFirewalls,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/azureFirewalls.json
 bastionHosts,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/bastionHosts.json
 batchAccounts,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/batchAccounts.json
@@ -13,7 +13,7 @@ domainServices,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/m
 eventHub,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/eventHub.json
 integrationAccts,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/integrationAccounts.json
 IotHubs,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/IoTHubs.json
-keyVaults,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/keyVaults.json
+keyVaults,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/keyVaults.json
 kubernetes,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/kubernetes.json
 loadBalancers,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/loadBalancers.json
 netFrontDoors,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/networkFrontDoors.json

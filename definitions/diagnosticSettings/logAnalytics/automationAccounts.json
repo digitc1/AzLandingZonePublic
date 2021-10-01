@@ -85,6 +85,10 @@
 										{
 											"category": "DscNodeStatus",
 											"enabled": "True"
+										},
+										{
+											"category": "AuditEvent",
+											"enabled": "True"
 										}
 									],
 									"workspaceId": "[parameters('workspaceId')]"

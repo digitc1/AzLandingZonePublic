@@ -14,18 +14,18 @@
         "authorizations": {
             "value": [
                 { 
-                    "principalId": "4be7ace7-3af6-43de-aeba-8540d8cdb3b4", 
+                    "principalId": "60e355b2-4711-4b6c-9325-4ef5f183cc18", 
                     "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c",
                     "principalIdDisplayName": "DIGIT broker_contributor" 
                 }, 
                 { 
-                    "principalId": "ac680127-671a-45c0-918e-4f2b32cddb2b", 
+                    "principalId": "b5d6459d-02b3-470c-8c87-447e1a9bf741", 
                     "roleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7",
                     "principalIdDisplayName": "DIGIT broker_reader"
                     
                 },
                 { 
-                    "principalId": "96308f3d-1de7-4662-beb6-de48565d78e1", 
+                    "principalId": "f452a236-b4f5-4379-be41-82d3c4462487", 
                     "roleDefinitionId": "fa23ad8b-c56e-40d8-ac0c-ce449e1d2c64",
                     "principalIdDisplayName": "DIGIT broker_billing"
                     

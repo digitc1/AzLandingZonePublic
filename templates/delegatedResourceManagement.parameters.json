@@ -9,37 +9,37 @@
             "value": "Provides Management access to the Azure Security Center and Log analytics to DIGIT S"
         },
         "managedByTenantId": {
-            "value": "3a8968a8-fbcf-4414-8b5c-77255f50f37b"
+            "value": "1647eb98-698c-4714-b3b5-8cc15f794d36"
         },
         "authorizations": {
             "value": [
                 {
-                    "principalId": "f40bf004-4ec1-4882-aab7-8dcc1d6803be",
+                    "principalId": "9d0d58a2-f2ef-4d52-9ed8-5515708abb3f",
                     "principalIdDisplayName": "DIGIT S1 team",
                     "roleDefinitionId": "39bc4728-0917-49c7-9d2c-d95423bc2eb4"
                 },
                 {
-                    "principalId": "1c0a1bf1-da6c-4d9e-a834-be9516da1ca0",
+                    "principalId": "eff1d8d9-72b3-4c38-932c-92def74fea86",
                     "principalIdDisplayName": "DIGIT S2 team",
                     "roleDefinitionId": "39bc4728-0917-49c7-9d2c-d95423bc2eb4"
                 },
                 {
-                    "principalId": "f40bf004-4ec1-4882-aab7-8dcc1d6803be",
+                    "principalId": "9d0d58a2-f2ef-4d52-9ed8-5515708abb3f",
                     "principalIdDisplayName": "DIGIT S1 team",
                     "roleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7"
                 },
                 {
-                    "principalId": "1c0a1bf1-da6c-4d9e-a834-be9516da1ca0",
+                    "principalId": "eff1d8d9-72b3-4c38-932c-92def74fea86",
                     "principalIdDisplayName": "DIGIT S2 team",
                     "roleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7"
                 },
                 {
-                    "principalId": "f40bf004-4ec1-4882-aab7-8dcc1d6803be",
+                    "principalId": "9d0d58a2-f2ef-4d52-9ed8-5515708abb3f",
                     "principalIdDisplayName": "DIGIT S1 team",
                     "roleDefinitionId": "73c42c96-874c-492b-b04d-ab87d138a893"
                 },
                 {
-                    "principalId": "1c0a1bf1-da6c-4d9e-a834-be9516da1ca0",
+                    "principalId": "eff1d8d9-72b3-4c38-932c-92def74fea86",
                     "principalIdDisplayName": "DIGIT S2 team",
                     "roleDefinitionId": "73c42c96-874c-492b-b04d-ab87d138a893"
                 }

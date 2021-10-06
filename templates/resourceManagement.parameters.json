@@ -3,10 +3,10 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "mspOfferName": {
-            "value": "DIGIT broker"
+            "value": "new DIGIT broker"
         },
         "mspOfferDescription": {
-            "value": "DIGIT broker"
+            "value": "new DIGIT broker"
         },
         "managedByTenantId": {
             "value": "1647eb98-698c-4714-b3b5-8cc15f794d36"

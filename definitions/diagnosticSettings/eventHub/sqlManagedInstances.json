@@ -4,10 +4,6 @@
 			{
 				"field": "type",
 				"equals": "Microsoft.Sql/managedInstances"
-			},
-			{
-				"field": "location",
-				"like": "[parameters('region')]"
 			}
 		]
 	},
@@ -42,10 +38,10 @@
 						"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 						"contentVersion": "1.0.0.0",
 						"parameters": {
-							"resourceName": {
+							"resourceLocation": {
 								"type": "string"
 							},
-							"region": {
+							"resourceName": {
 								"type": "string"
 							},
 							"eventHubRuleId": {
@@ -63,7 +59,7 @@
 								"type": "Microsoft.Sql/managedInstances/providers/diagnosticSettings",
 								"apiVersion": "2017-05-01-preview",
 								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-eventHub')]",
-								"location": "[parameters('region')]",
+								"location": "[parameters('resourceLocation')]",
 								"dependsOn": [],
 								"properties": {
 									"eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
@@ -83,8 +79,8 @@
 						]
 					},
 					"parameters": {
-						"region": {
-							"value": "[parameters('region')]"
+						"resourceLocation": {
+							"value": "[field('location')]"
 						},
 						"resourceName": {
 							"value": "[field('name')]"

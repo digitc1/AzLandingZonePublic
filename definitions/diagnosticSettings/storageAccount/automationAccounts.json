@@ -4,10 +4,6 @@
 			{
 				"field": "type",
 				"equals": "Microsoft.Automation/automationAccounts"
-			},
-			{
-				"field": "location",
-				"like": "[parameters('region')]"
 			}
 		]
 	},
@@ -42,10 +38,10 @@
 						"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 						"contentVersion": "1.0.0.0",
 						"parameters": {
-							"resourceName": {
+							"resourceLocation": {
 								"type": "string"
 							},
-							"region": {
+							"resourceName": {
 								"type": "string"
 							},
 							"storageAccountId": {
@@ -60,7 +56,7 @@
 								"type": "Microsoft.Automation/automationAccounts/providers/diagnosticSettings",
 								"apiVersion": "2017-05-01-preview",
 								"name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/setByPolicy-storageAccount')]",
-								"location": "[parameters('region')]",
+								"location": "[parameters('resourceLocation')]",
 								"dependsOn": [],
 								"properties": {
 									"storageAccountId": "[parameters('storageAccountId')]",
@@ -97,8 +93,8 @@
 						]
 					},
 					"parameters": {
-						"region": {
-							"value": "[parameters('region')]"
+						"resourceLocation": {
+							"value": "[field('location')]"
 						},
 						"resourceName": {
 							"value": "[field('name')]"

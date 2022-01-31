@@ -41,9 +41,6 @@
 							"resourceName": {
 								"type": "string"
 							},
-							"region": {
-								"type": "string"
-							},
 							"workspaceId": {
 								"type": "string"
 							},
@@ -56,7 +53,7 @@
 								"type": "Microsoft.CognitiveServices/accounts/providers/diagnosticSettings",
 								"apiVersion": "2017-05-01-preview",
 								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-workspace')]",
-								"location": "[parameters('region')]",
+								"location": "westeurope",
 								"dependsOn": [],
 								"properties": {
 									"metrics": [
@@ -89,9 +86,6 @@
 						]
 					},
 					"parameters": {
-						"region": {
-							"value": "[parameters('region')]"
-						},
 						"resourceName": {
 							"value": "[field('name')]"
 						},

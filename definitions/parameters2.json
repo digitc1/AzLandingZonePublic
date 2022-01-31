@@ -1,11 +1,4 @@
 {
-	"region": {
-		"type": "String",
-        "metadata": {
-			"displayName": "Location",
-			"description": "Region where most of resources are deployed"
-        }
-    },
     "workspaceId": {
         "type": "String",
         "metadata": {

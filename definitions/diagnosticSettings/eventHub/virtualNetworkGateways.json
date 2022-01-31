@@ -4,10 +4,6 @@
 			{
 				"field": "type",
 				"equals": "Microsoft.Network/virtualNetworkGateways"
-			},
-			{
-				"field": "location",
-				"like": "[parameters('region')]"
 			}
 		]
 	},
@@ -45,7 +41,7 @@
 							"resourceName": {
 								"type": "string"
 							},
-							"region": {
+							"resourceLocation": {
 								"type": "string"
 							},
 							"eventHubRuleId": {
@@ -63,7 +59,7 @@
 								"type": "Microsoft.Network/virtualNetworkGateways/providers/diagnosticSettings",
 								"apiVersion": "2017-05-01-preview",
 								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-eventHub')]",
-								"location": "[parameters('region')]",
+								"location": "[parameters('resourceLocation')]",
 								"dependsOn": [],
 								"properties": {
 									"eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
@@ -105,8 +101,8 @@
 						]
 					},
 					"parameters": {
-						"region": {
-							"value": "[parameters('region')]"
+						"resourceLocation": {
+							"value": "[field('location')]"
 						},
 						"resourceName": {
 							"value": "[field('name')]"

@@ -110,7 +110,7 @@ Get-Content -Path $HOME/definitionList.txt | ForEAch-Object {
     else {
         $effect = "DeployIfNotExists"
     }
-    $param = @{ storageAccountId = @{value = $GetStorageAccount.Id }; region = @{value = $GetResourceGroup.Location }; effect = @{value = $effect } }
+    $param = @{ storageAccountId = @{value = $GetStorageAccount.Id }; effect = @{value = $effect } }
 
     $policyDefinition = Get-AzPolicyDefinition -ManagementGroupName $GetManagementGroup.Name | Where-Object { $_.Name -like $policyName }
     if ($policyDefinition) {
@@ -158,7 +158,7 @@ if ($GetLogAnalyticsWorkspace = Get-AzOperationalInsightsWorkspace -ResourceGrou
         else {
             $effect = "DeployIfNotExists"
         }
-        $param = @{ workspaceId = @{value = $GetLogAnalyticsWorkspace.ResourceId }; region = @{value = $GetResourceGroup.Location }; effect = @{value = $effect } }
+        $param = @{ workspaceId = @{value = $GetLogAnalyticsWorkspace.ResourceId }; effect = @{value = $effect } }
 
         $policyDefinition = Get-AzPolicyDefinition -ManagementGroupName $GetManagementGroup.Name -Name $policyName -ErrorAction Continue
         if ($policyDefinition) {
@@ -208,7 +208,7 @@ if ($GetEventHubNamespace = Get-AzEventHubNamespace -ResourceGroupName $GetResou
         else {
             $effect = "DeployIfNotExists"
         }
-        $param = @{ eventHubRuleId = @{value = $GetEventHubAuthorizationRuleId.Id }; region = @{value = $GetResourceGroup.Location }; effect = @{value = $effect }; eventHubName = @{value = "insights-operational-logs" } }
+        $param = @{ eventHubRuleId = @{value = $GetEventHubAuthorizationRuleId.Id }; effect = @{value = $effect }; eventHubName = @{value = "insights-operational-logs" } }
 
         $policyDefinition = Get-AzPolicyDefinition -ManagementGroupName $GetManagementGroup.Name -Name $policyName -ErrorAction Continue
         if ($policyDefinition) {

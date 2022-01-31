@@ -4,10 +4,6 @@
             {
                 "field": "type",
                 "equals": "Microsoft.Storage/storageAccounts"
-            },
-            {
-                "field": "location",
-                "like": "[parameters('region')]"
             }
         ]
     },
@@ -42,10 +38,10 @@
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
+                            "resourceLocation": {
+								"type": "string"
+							},
                             "resourceName": {
-                                "type": "string"
-                            },
-                            "region": {
                                 "type": "string"
                             },
                             "eventHubRuleId": {
@@ -63,7 +59,7 @@
                                 "type": "Microsoft.Storage/storageAccounts/blobServices/providers/diagnosticSettings",
                                 "apiVersion": "2017-05-01-preview",
                                 "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-eventHub')]",
-                                "location": "[parameters('region')]",
+                                "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
                                 "properties": {
                                     "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
@@ -94,7 +90,7 @@
                                 "type": "Microsoft.Storage/storageAccounts/fileServices/providers/diagnosticSettings",
                                 "apiVersion": "2017-05-01-preview",
                                 "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-eventHub')]",
-                                "location": "[parameters('region')]",
+                                "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
                                 "properties": {
                                     "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
@@ -125,7 +121,7 @@
                                 "type": "Microsoft.Storage/storageAccounts/tableServices/providers/diagnosticSettings",
                                 "apiVersion": "2017-05-01-preview",
                                 "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-eventHub')]",
-                                "location": "[parameters('region')]",
+                                "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
                                 "properties": {
                                     "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
@@ -156,7 +152,7 @@
                                 "type": "Microsoft.Storage/storageAccounts/queueServices/providers/diagnosticSettings",
                                 "apiVersion": "2017-05-01-preview",
                                 "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-eventHub')]",
-                                "location": "[parameters('region')]",
+                                "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
                                 "properties": {
                                     "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
@@ -187,7 +183,7 @@
                                 "type": "Microsoft.Storage/storageAccounts/providers/diagnosticSettings",
                                 "apiVersion": "2017-05-01-preview",
                                 "name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/setByPolicy-eventHub')]",
-                                "location": "[parameters('region')]",
+                                "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
                                 "properties": {
                                     "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
@@ -203,11 +199,11 @@
                         ]
                     },
                     "parameters": {
+                        "resourceLocation": {
+                            "value": "[field('location')]"
+                        },
                         "resourceName": {
                             "value": "[field('name')]"
-                        },
-                        "region": {
-                            "value": "[parameters('region')]"
                         },
                         "eventHubRuleId": {
                             "value": "[parameters('eventHubRuleId')]"

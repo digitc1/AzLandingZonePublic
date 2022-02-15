@@ -54,27 +54,19 @@
 						"resources": [
 							{
 								"type": "Microsoft.Sql/managedInstances/databases/providers/diagnosticSettings",
-								"apiVersion": "2017-05-01-preview",
+								"apiVersion": "2021-05-01-preview",
 								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-workspace')]",
 								"location": "[parameters('resourceLocation')]",
 								"dependsOn": [],
 								"properties": {
 									"logs": [
 										{
-											"category": "SQLInsights",
-											"enabled": "True"
-										},
-										{
-											"category": "QueryStoreRuntimeStatistics",
-											"enabled": "True"
-										},
-										{
-											"category": "QueryStoreWaitStatistics",
-											"enabled": "True"
-										},
-										{
-											"category": "Errors",
-											"enabled": "True"
+											"categoryGroup": "allLogs",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
 										}
 									],
 									"workspaceId": "[parameters('workspaceId')]"

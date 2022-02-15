@@ -62,12 +62,20 @@
 									"storageAccountId": "[parameters('storageAccountId')]",
 									"logs": [
 										{
-											"category": "ResourceUsageStats",
-											"enabled": "True"
+											"categoryGroup": "allLogs",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
 										},
 										{
-											"category": "SQLSecurityAuditEvents",
-											"enabled": "True"
+											"categoryGroup": "audit",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
 										}
 									]
 								}

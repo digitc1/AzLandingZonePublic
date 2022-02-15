@@ -109,6 +109,10 @@
 										{
 											"category": "AppServicePlatformLogs",
 											"enabled": "True"
+										},
+										{
+											"category": "AppServiceAntivirusScanAuditLogs",
+											"enabled": "True"
 										}
 									]
 								}

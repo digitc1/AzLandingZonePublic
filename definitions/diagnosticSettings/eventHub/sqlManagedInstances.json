@@ -57,7 +57,7 @@
 						"resources": [
 							{
 								"type": "Microsoft.Sql/managedInstances/providers/diagnosticSettings",
-								"apiVersion": "2017-05-01-preview",
+								"apiVersion": "2021-05-01-preview",
 								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-eventHub')]",
 								"location": "[parameters('resourceLocation')]",
 								"dependsOn": [],
@@ -66,12 +66,20 @@
 									"eventHubName": "[parameters('eventHubName')]",
 									"logs": [
 										{
-											"category": "ResourceUsageStats",
-											"enabled": "True"
+											"categoryGroup": "allLogs",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
 										},
 										{
-											"category": "SQLSecurityAuditEvents",
-											"enabled": "True"
+											"categoryGroup": "audit",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
 										}
 									]
 								}

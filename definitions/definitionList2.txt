@@ -1,7 +1,7 @@
 analysisServices,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/analysisServices.json
 appFunction,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/appFunction.json
 appGateways,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/applicationGateways.json
-appService,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/appService.json
+appService,6,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/appService.json
 automationAccts,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/automationAccounts.json
 azureFirewalls,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/azureFirewalls.json
 bastionHosts,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/bastionHosts.json
@@ -10,7 +10,7 @@ cognitiveServices,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePubli
 dataLakeAnalytics,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/dataLakeAnalytics.json
 dataLakeStore,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/dataLakeStore.json
 domainServices,2,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/domainServices.json
-eventHub,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/eventHub.json
+eventHub,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/eventHub.json
 integrationAccts,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/integrationAccounts.json
 IotHubs,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/IoTHubs.json
 keyVaults,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/keyVaults.json
@@ -24,8 +24,8 @@ publicIP,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/
 recoveryServVaults,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/recoveryServicesVaults.json
 searchServices,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/searchServices.json
 serviceBus,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/serviceBusNamespaces.json
-sqlManagedInstances,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/sqlManagedInstances.json
-sqlManagedInstDb,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/sqlManagedInstancesDatabases.json
+sqlManagedInstances,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/sqlManagedInstances.json
+sqlManagedInstDb,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/sqlManagedInstancesDatabases.json
 sqlServerDb,7,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/sqlServerDatabases.json
 storageAccounts,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/storageAccounts.json
 streamAnalytics,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/logAnalytics/streamAnalytics.json

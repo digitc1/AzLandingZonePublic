@@ -4,6 +4,10 @@
 			{
 				"field": "type",
 				"equals": "Microsoft.Sql/servers/databases"
+			},
+			{
+				"field": "name",
+				"notEquals": "master"
 			}
 		]
 	},
@@ -54,7 +58,7 @@
 						"resources": [
 							{
 								"type": "Microsoft.Sql/servers/databases/providers/diagnosticSettings",
-								"apiVersion": "2017-05-01-preview",
+								"apiVersion": "2021-05-01-preview",
 								"name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/setByPolicy-storageAccount')]",
 								"location": "[parameters('resourceLocation')]",
 								"dependsOn": [],
@@ -88,40 +92,20 @@
 									],
 									"logs": [
 										{
-											"category": "SQLInsights",
-											"enabled": "True"
+											"categoryGroup": "allLogs",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
 										},
 										{
-											"category": "AutomaticTuning",
-											"enabled": "True"
-										},
-										{
-											"category": "QueryStoreWaitStatistics",
-											"enabled": "True"
-										},
-										{
-											"category": "QueryStoreRuntimeStatistics",
-											"enabled": "True"
-										},
-										{
-											"category": "Errors",
-											"enabled": "True"
-										},
-										{
-											"category": "DatabaseWaitStatistics",
-											"enabled": "True"
-										},
-										{
-											"category": "Timeouts",
-											"enabled": "True"
-										},
-										{
-											"category": "Blocks",
-											"enabled": "True"
-										},
-										{
-											"category": "Deadlocks",
-											"enabled": "True"
+											"categoryGroup": "audit",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
 										}
 									]
 								}

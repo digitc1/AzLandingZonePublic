@@ -57,7 +57,7 @@
                         "resources": [
                             {
                                 "type": "Microsoft.Storage/storageAccounts/blobServices/providers/diagnosticSettings",
-                                "apiVersion": "2017-05-01-preview",
+                                "apiVersion": "2021-05-01-preview",
                                 "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-eventHub')]",
                                 "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
@@ -67,7 +67,19 @@
                                     "metrics": [
                                         {
                                             "category": "Transaction",
-                                            "enabled": "True"
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
+                                        },
+                                        {
+                                            "category": "Capacity",
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
                                         }
                                     ],
                                     "logs": [
@@ -88,7 +100,7 @@
                             },
                             {
                                 "type": "Microsoft.Storage/storageAccounts/fileServices/providers/diagnosticSettings",
-                                "apiVersion": "2017-05-01-preview",
+                                "apiVersion": "2021-05-01-preview",
                                 "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-eventHub')]",
                                 "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
@@ -98,7 +110,19 @@
                                     "metrics": [
                                         {
                                             "category": "Transaction",
-                                            "enabled": "True"
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
+                                        },
+                                        {
+                                            "category": "Capacity",
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
                                         }
                                     ],
                                     "logs": [
@@ -119,7 +143,7 @@
                             },
                             {
                                 "type": "Microsoft.Storage/storageAccounts/tableServices/providers/diagnosticSettings",
-                                "apiVersion": "2017-05-01-preview",
+                                "apiVersion": "2021-05-01-preview",
                                 "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-eventHub')]",
                                 "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
@@ -129,7 +153,19 @@
                                     "metrics": [
                                         {
                                             "category": "Transaction",
-                                            "enabled": "True"
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
+                                        },
+                                        {
+                                            "category": "Capacity",
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
                                         }
                                     ],
                                     "logs": [
@@ -150,7 +186,7 @@
                             },
                             {
                                 "type": "Microsoft.Storage/storageAccounts/queueServices/providers/diagnosticSettings",
-                                "apiVersion": "2017-05-01-preview",
+                                "apiVersion": "2021-05-01-preview",
                                 "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-eventHub')]",
                                 "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
@@ -160,7 +196,19 @@
                                     "metrics": [
                                         {
                                             "category": "Transaction",
-                                            "enabled": "True"
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
+                                        },
+                                        {
+                                            "category": "Capacity",
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
                                         }
                                     ],
                                     "logs": [
@@ -181,7 +229,7 @@
                             },
                             {
                                 "type": "Microsoft.Storage/storageAccounts/providers/diagnosticSettings",
-                                "apiVersion": "2017-05-01-preview",
+                                "apiVersion": "2021-05-01-preview",
                                 "name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/setByPolicy-eventHub')]",
                                 "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
@@ -191,7 +239,19 @@
                                     "metrics": [
                                         {
                                             "category": "Transaction",
-                                            "enabled": "True"
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
+                                        },
+                                        {
+                                            "category": "Capacity",
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
                                         }
                                     ]
                                 }

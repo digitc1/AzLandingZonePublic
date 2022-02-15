@@ -79,7 +79,7 @@
 							"value": "[field('location')]"
 						},
 						"resourceName": {
-							"value": "[field('name')]"
+							"value": "[field('fullname')]"
 						},
 						"workspaceId": {
 							"value": "[parameters('workspaceId')]"

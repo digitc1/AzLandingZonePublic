@@ -25,7 +25,7 @@ recoveryServVaults,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePubl
 searchServices,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/searchServices.json
 serviceBus,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/serviceBusNamespaces.json
 sqlManagedInstances,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/sqlManagedInstances.json
-sqlManagedInstDb,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/sqlManagedInstancesDatabases.json
+sqlManagedInstDb,6,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/sqlManagedInstancesDatabases.json
 sqlServerDb,7,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/sqlServerDatabases.json
 storageAccounts,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/storageAccounts.json
 streamAnalytics,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/streamAnalytics.json

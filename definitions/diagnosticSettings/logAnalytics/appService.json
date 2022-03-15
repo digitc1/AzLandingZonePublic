@@ -90,10 +90,6 @@
 											"enabled": "True"
 										},
 										{
-											"category": "AppServiceFileAuditLogs",
-											"enabled": "True"
-										},
-										{
 											"category": "AppServiceAuditLogs",
 											"enabled": "True"
 										},
@@ -103,10 +99,6 @@
 										},
 										{
 											"category": "AppServicePlatformLogs",
-											"enabled": "True"
-										},
-										{
-											"category": "AppServiceAntivirusScanAuditLogs",
 											"enabled": "True"
 										}
 									],

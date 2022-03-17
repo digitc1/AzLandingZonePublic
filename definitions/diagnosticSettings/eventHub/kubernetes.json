@@ -76,11 +76,47 @@
 									],
 									"logs": [
 										{
-											"category": "OperationalLogs",
+											"category": "kube-apiserver",
 											"enabled": "True"
 										},
 										{
-											"category": "VNetAndIPFilteringLogs",
+											"category": "kube-audit",
+											"enabled": "True"
+										},
+										{
+											"category": "kube-audit-admin",
+											"enabled": "True"
+										},
+										{
+											"category": "kube-controller-manager",
+											"enabled": "True"
+										},
+										{
+											"category": "kube-scheduler",
+											"enabled": "True"
+										},
+										{
+											"category": "cluster-autoscaler",
+											"enabled": "True"
+										},
+										{
+											"category": "guard",
+											"enabled": "True"
+										},
+										{
+											"category": "cloud-controller-manager",
+											"enabled": "True"
+										},
+										{
+											"category": "csi-azuredisk-controller",
+											"enabled": "True"
+										},
+										{
+											"category": "csi-azurefile-controller",
+											"enabled": "True"
+										},
+										{
+											"category": "csi-snapshot-controller",
 											"enabled": "True"
 										}
 									]

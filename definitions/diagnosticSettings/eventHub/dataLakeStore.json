@@ -57,7 +57,7 @@
 						"resources": [
 							{
 								"type": "Microsoft.DataLakeStore/accounts/providers/diagnosticSettings",
-								"apiVersion": "2017-05-01-preview",
+								"apiVersion": "2021-05-01-preview",
 								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-eventHub')]",
 								"location": "[parameters('resourceLocation')]",
 								"dependsOn": [],
@@ -76,12 +76,12 @@
 									],
 									"logs": [
 										{
-											"category": "Audit",
-											"enabled": "True"
-										},
-										{
-											"category": "Request",
-											"enabled": "True"
+											"categoryGroup": "allLogs",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
 										}
 									]
 								}

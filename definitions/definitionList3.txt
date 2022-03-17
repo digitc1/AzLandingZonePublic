@@ -8,13 +8,13 @@ bastionHosts,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/mas
 batchAccounts,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/batchAccounts.json
 cognitiveServices,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/cognitiveServices.json
 dataLakeAnalytics,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/dataLakeAnalytics.json
-dataLakeStore,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/dataLakeStore.json
+dataLakeStore,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/dataLakeStore.json
 domainServices,2,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/domainServices.json
 eventHub,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/eventHub.json
 integrationAccts,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/integrationAccounts.json
 IotHubs,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/IoTHubs.json
 keyVaults,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/keyVaults.json
-kubernetes,2,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/kubernetes.json
+kubernetes,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/kubernetes.json
 loadBalancers,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/loadBalancers.json
 netFrontDoors,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/networkFrontDoors.json
 networkInterfaces,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/networkInterfaces.json

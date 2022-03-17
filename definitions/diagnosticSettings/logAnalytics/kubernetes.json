@@ -97,6 +97,22 @@
 										{
 											"category": "guard",
 											"enabled": "True"
+										},
+										{
+											"category": "cloud-controller-manager",
+											"enabled": "True"
+										},
+										{
+											"category": "csi-azuredisk-controller",
+											"enabled": "True"
+										},
+										{
+											"category": "csi-azurefile-controller",
+											"enabled": "True"
+										},
+										{
+											"category": "csi-snapshot-controller",
+											"enabled": "True"
 										}
 									],
 									"workspaceId": "[parameters('workspaceId')]"

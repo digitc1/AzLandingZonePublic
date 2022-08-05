@@ -82,6 +82,14 @@
 												"enabled": false,
 												"days": 0
 											}
+										},
+										{
+											"categoryGroup": "audit",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
 										}
 									]
 								}

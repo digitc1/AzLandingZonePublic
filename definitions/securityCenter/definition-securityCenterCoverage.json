@@ -34,15 +34,16 @@
             "resources": [
               {
                 "type": "Microsoft.Security/pricings",
-                "apiVersion": "2018-06-01",
+                "apiVersion": "2022-03-01",
                 "name": "VirtualMachines",
                 "properties": {
+                  "subPlan": "P2",
                   "pricingTier": "Standard"
                 }
               },
               {
                 "type": "Microsoft.Security/pricings",
-                "apiVersion": "2018-06-01",
+                "apiVersion": "2022-03-01",
                 "name": "SqlServers",
                 "properties": {
                   "pricingTier": "Standard"
@@ -50,7 +51,7 @@
               },
               {
                 "type": "Microsoft.Security/pricings",
-                "apiVersion": "2018-06-01",
+                "apiVersion": "2022-03-01",
                 "name": "AppServices",
                 "properties": {
                   "pricingTier": "Standard"
@@ -58,7 +59,7 @@
               },
               {
                 "type": "Microsoft.Security/pricings",
-                "apiVersion": "2018-06-01",
+                "apiVersion": "2022-03-01",
                 "name": "StorageAccounts",
                 "properties": {
                   "pricingTier": "Standard"
@@ -66,7 +67,7 @@
               },
               {
                 "type": "Microsoft.Security/pricings",
-                "apiVersion": "2018-06-01",
+                "apiVersion": "2022-03-01",
                 "name": "SqlServerVirtualMachines",
                 "properties": {
                   "pricingTier": "Standard"
@@ -74,7 +75,23 @@
               },
               {
                 "type": "Microsoft.Security/pricings",
-                "apiVersion": "2018-06-01",
+                "apiVersion": "2022-03-01",
+                "name": "OpenSourceRelationalDatabases",
+                "properties": {
+                  "pricingTier": "Standard"
+                }
+              },
+              {
+                "type": "Microsoft.Security/pricings",
+                "apiVersion": "2022-03-01",
+                "name": "cosmosDbs",
+                "properties": {
+                  "pricingTier": "Standard"
+                }
+              },
+              {
+                "type": "Microsoft.Security/pricings",
+                "apiVersion": "2022-03-01",
                 "name": "KubernetesService",
                 "properties": {
                   "pricingTier": "Standard"
@@ -82,15 +99,15 @@
               },
               {
                 "type": "Microsoft.Security/pricings",
-                "apiVersion": "2018-06-01",
-                "name": "ContainerRegistry",
+                "apiVersion": "2022-03-01",
+                "name": "Containers",
                 "properties": {
                   "pricingTier": "Standard"
                 }
               },
               {
                 "type": "Microsoft.Security/pricings",
-                "apiVersion": "2018-06-01",
+                "apiVersion": "2022-03-01",
                 "name": "KeyVaults",
                 "properties": {
                   "pricingTier": "Standard"
@@ -98,7 +115,7 @@
               },
               {
                 "type": "Microsoft.Security/pricings",
-                "apiVersion": "2018-06-01",
+                "apiVersion": "2022-03-01",
                 "name": "Dns",
                 "properties": {
                   "pricingTier": "Standard"
@@ -106,16 +123,8 @@
               },
               {
                 "type": "Microsoft.Security/pricings",
-                "apiVersion": "2018-06-01",
+                "apiVersion": "22022-03-01",
                 "name": "Arm",
-                "properties": {
-                  "pricingTier": "Standard"
-                }
-              },
-              {
-                "type": "Microsoft.Security/pricings",
-                "apiVersion": "2018-06-01",
-                "name": "OpenSourceRelationalDatabases",
                 "properties": {
                   "pricingTier": "Standard"
                 }

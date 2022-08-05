@@ -54,47 +54,37 @@
 						"resources": [
 							{
 								"type": "Microsoft.AAD/DomainServices/providers/diagnosticSettings",
-								"apiVersion": "2017-05-01-preview",
+								"apiVersion": "2021-05-01-preview",
 								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-workspace')]",
 								"location": "[parameters('resourceLocation')]",
 								"dependsOn": [],
 								"properties": {
+									"metrics": [
+										{
+											"category": "AllMetrics",
+											"enabled": "True",
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
+										}
+									],
 									"logs": [
 										{
-											"category": "SystemSecurity",
-											"enabled": "True"
+											"categoryGroup": "allLogs",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
 										},
 										{
-											"category": "AccountManagement",
-											"enabled": "True"
-										},
-										{
-											"category": "LogonLogoff",
-											"enabled": "True"
-										},
-										{
-											"category": "ObjectAccess",
-											"enabled": "True"
-										},
-										{
-											"category": "PolicyChange",
-											"enabled": "True"
-										},
-										{
-											"category": "PrivilegeUse",
-											"enabled": "True"
-										},
-										{
-											"category": "DetailTracking",
-											"enabled": "True"
-										},
-										{
-											"category": "DirectoryServiceAccess",
-											"enabled": "True"
-										},
-										{
-											"category": "AccountLogon",
-											"enabled": "True"
+											"categoryGroup": "audit",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
 										}
 									],
 									"workspaceId": "[parameters('workspaceId')]"

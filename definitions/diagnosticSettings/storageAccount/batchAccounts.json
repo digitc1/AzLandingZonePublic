@@ -54,7 +54,7 @@
 						"resources": [
 							{
 								"type": "Microsoft.Batch/batchAccounts/providers/diagnosticSettings",
-								"apiVersion": "2017-05-01-preview",
+								"apiVersion": "2021-05-01-preview",
 								"name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/setByPolicy-storageAccount')]",
 								"location": "[parameters('resourceLocation')]",
 								"dependsOn": [],
@@ -72,8 +72,20 @@
 									],
 									"logs": [
 										{
-											"category": "ServiceLog",
-											"enabled": "True"
+											"categoryGroup": "allLogs",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
+										},
+										{
+											"categoryGroup": "audit",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
 										}
 									]
 								}

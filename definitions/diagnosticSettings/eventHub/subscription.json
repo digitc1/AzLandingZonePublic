@@ -33,6 +33,9 @@
                 "properties": {
                     "mode": "incremental",
                     "parameters": {
+                        "policyName": {
+							"value": "[parameters('policyName')]"
+						},
                         "eventHubRuleId": {
                             "value": "[parameters('eventHubRuleId')]"
                         },
@@ -47,6 +50,9 @@
                         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
+                            "policyName": {
+								"type": "string"
+							},
                             "eventHubRuleId": {
                                 "type": "string"
                             },
@@ -61,8 +67,8 @@
                         "resources": [
                             {
                                 "type": "Microsoft.Insights/diagnosticSettings",
-                                "apiVersion": "2017-05-01-preview",
-                                "name": "setByPolicy-eventHub",
+                                "apiVersion": "2021-05-01-preview",
+                                "name": "[concat(parameters('policyName'), '-eventHub')]",
                                 "properties": {
                                     "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
                                     "eventHubName": "[parameters('eventHubName')]",

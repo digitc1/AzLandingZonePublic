@@ -15,7 +15,7 @@
 		"effect": "[parameters('effect')]",
 		"details": {
 			"type": "Microsoft.Insights/diagnosticSettings",
-			"name": "setByPolicy-eventHub",
+			"name": "[concat(parameters('policyName'), '-eventHub')]",
 			"existenceCondition": {
 				"allOf": [
 					{
@@ -42,6 +42,9 @@
 						"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 						"contentVersion": "1.0.0.0",
 						"parameters": {
+							"policyName": {
+								"type": "string"
+							},
 							"resourceLocation": {
 								"type": "string"
 							},
@@ -62,7 +65,7 @@
 							{
 								"type": "Microsoft.Sql/servers/databases/providers/diagnosticSettings",
 								"apiVersion": "2021-05-01-preview",
-								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-eventHub')]",
+								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/', parameters('policyName'), '-eventHub')]",
 								"location": "[parameters('resourceLocation')]",
 								"dependsOn": [],
 								"properties": {
@@ -102,14 +105,6 @@
 												"enabled": false,
 												"days": 0
 											}
-										},
-										{
-											"categoryGroup": "audit",
-											"enabled": true,
-											"retentionPolicy": {
-												"enabled": false,
-												"days": 0
-											}
 										}
 									]
 								}
@@ -117,6 +112,9 @@
 						]
 					},
 					"parameters": {
+						"policyName": {
+							"value": "[parameters('policyName')]"
+						},
 						"resourceLocation": {
 							"value": "[field('location')]"
 						},

@@ -11,11 +11,15 @@
 		"effect": "[parameters('effect')]",
 		"details": {
 			"type": "Microsoft.Insights/diagnosticSettings",
-			"name": "setByPolicy-workspace",
+			"name": "[concat(parameters('policyName'), '-workspace')]",
 			"existenceCondition": {
 				"allOf": [
 					{
 						"field": "Microsoft.Insights/diagnosticSettings/logs.enabled",
+						"equals": "True"
+					},
+					{
+						"field": "Microsoft.Insights/diagnosticSettings/metrics.enabled",
 						"equals": "True"
 					},
 					{
@@ -34,6 +38,9 @@
 						"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 						"contentVersion": "1.0.0.0",
 						"parameters": {
+							"policyName": {
+								"type": "string"
+							},
 							"resourceLocation": {
 								"type": "string"
 							},
@@ -50,15 +57,19 @@
 						"resources": [
 							{
 								"type": "Microsoft.Network/bastionHosts/providers/diagnosticSettings",
-								"apiVersion": "2017-05-01-preview",
-								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-workspace')]",
+								"apiVersion": "2021-05-01-preview",
+								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/', parameters('policyName'), '-workspace')]",
 								"location": "[parameters('resourceLocation')]",
 								"dependsOn": [],
 								"properties": {
 									"logs": [
 										{
-											"category": "BastionAuditLogs",
-											"enabled": "True"
+											"categoryGroup": "allLogs",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
 										}
 									],
 									"workspaceId": "[parameters('workspaceId')]"
@@ -67,6 +78,9 @@
 						]
 					},
 					"parameters": {
+						"policyName": {
+							"value": "[parameters('policyName')]"
+						},
 						"resourceLocation": {
 							"value": "[field('location')]"
 						},

@@ -1,4 +1,11 @@
 {
+    "policyName": {
+        "type": "String",
+        "metadata": {
+            "displayName": "policy name"
+        },
+        "defaultValue": "setByPolicy"
+    },
     "storageAccountId": {
         "type": "String",
         "metadata": {

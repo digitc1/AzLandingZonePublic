@@ -11,7 +11,7 @@
 		"effect": "[parameters('effect')]",
 		"details": {
 			"type": "Microsoft.Insights/diagnosticSettings",
-			"name": "setByPolicy-workspace",
+			"name": "[concat(parameters('policyName'), '-workspace')]",
 			"existenceCondition": {
 				"allOf": [
 					{
@@ -34,6 +34,9 @@
 						"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 						"contentVersion": "1.0.0.0",
 						"parameters": {
+							"policyName": {
+								"type": "string"
+							},
 							"resourceLocation": {
 								"type": "string"
 							},
@@ -50,67 +53,19 @@
 						"resources": [
 							{
 								"type": "Microsoft.RecoveryServices/Vaults/providers/diagnosticSettings",
-								"apiVersion": "2017-05-01-preview",
-								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-workspace')]",
+								"apiVersion": "2021-05-01-preview",
+								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/', parameters('policyName'), '-workspace')]",
 								"location": "[parameters('resourceLocation')]",
 								"dependsOn": [],
 								"properties": {
 									"logs": [
 										{
-											"category": "AzureBackupReport",
-											"enabled": "True"
-										},
-										{
-											"category": "AzureSiteRecoveryJobs",
-											"enabled": "True"
-										},
-										{
-											"category": "AzureSiteRecoveryEvents",
-											"enabled": "True"
-										},
-										{
-											"category": "AzureSiteRecoveryReplicatedItems",
-											"enabled": "True"
-										},
-										{
-											"category": "AzureSiteRecoveryReplicationStats",
-											"enabled": "True"
-										},
-										{
-											"category": "AzureSiteRecoveryRecoveryPoints",
-											"enabled": "True"
-										},
-										{
-											"category": "AzureSiteRecoveryReplicationDataUploadRate",
-											"enabled": "True"
-										},
-										{
-											"category": "AzureSiteRecoveryProtectedDiskDataChurn",
-											"enabled": "True"
-										},
-										{
-											"category": "CoreAzureBackup",
-											"enabled": "True"
-										},
-										{
-											"category": "AddonAzureBackupJobs",
-											"enabled": "True"
-										},
-										{
-											"category": "AddonAzureBackupAlerts",
-											"enabled": "True"
-										},
-										{
-											"category": "AddonAzureBackupPolicy",
-											"enabled": "True"
-										},
-										{
-											"category": "AddonAzureBackupStorage",
-											"enabled": "True"
-										},
-										{
-											"category": "AddonAzureBackupProtectedInstance",
-											"enabled": "True"
+											"categoryGroup": "allLogs",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
 										}
 									],
 									"workspaceId": "[parameters('workspaceId')]"
@@ -119,6 +74,9 @@
 						]
 					},
 					"parameters": {
+						"policyName": {
+							"value": "[parameters('policyName')]"
+						},
 						"resourceLocation": {
 							"value": "[field('location')]"
 						},

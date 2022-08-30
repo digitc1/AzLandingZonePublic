@@ -11,11 +11,15 @@
 		"effect": "[parameters('effect')]",
 		"details": {
 			"type": "Microsoft.Insights/diagnosticSettings",
-			"name": "setByPolicy-eventHub",
+			"name": "[concat(parameters('policyName'), '-eventHub')]",
 			"existenceCondition": {
 				"allOf": [
 					{
 						"field": "Microsoft.Insights/diagnosticSettings/logs.enabled",
+						"equals": "True"
+					},
+					{
+						"field": "Microsoft.Insights/diagnosticSettings/metrics.enabled",
 						"equals": "True"
 					},
 					{
@@ -34,6 +38,9 @@
 						"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 						"contentVersion": "1.0.0.0",
 						"parameters": {
+							"policyName": {
+								"type": "string"
+							},
 							"resourceLocation": {
 								"type": "string"
 							},
@@ -53,17 +60,31 @@
 						"resources": [
 							{
 								"type": "Microsoft.Network/bastionHosts/providers/diagnosticSettings",
-								"apiVersion": "2017-05-01-preview",
-								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-eventHub')]",
+								"apiVersion": "2021-05-01-preview",
+								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/', parameters('policyName'), '-eventHub')]",
 								"location": "[parameters('resourceLocation')]",
 								"dependsOn": [],
 								"properties": {
 									"eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
 									"eventHubName": "[parameters('eventHubName')]",
+									"metrics": [
+										{
+											"category": "AllMetrics",
+											"enabled": "True",
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
+										}
+									],
 									"logs": [
 										{
-											"category": "BastionAuditLogs",
-											"enabled": "True"
+											"categoryGroup": "allLogs",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
 										}
 									]
 								}
@@ -71,6 +92,9 @@
 						]
 					},
 					"parameters": {
+						"policyName": {
+							"value": "[parameters('policyName')]"
+						},
 						"resourceLocation": {
 							"value": "[field('location')]"
 						},

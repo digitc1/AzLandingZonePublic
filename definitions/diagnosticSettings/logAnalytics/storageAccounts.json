@@ -11,7 +11,7 @@
         "effect": "[parameters('effect')]",
         "details": {
             "type": "Microsoft.Insights/diagnosticSettings",
-            "name": "setByPolicy-workspace",
+            "name": "[concat(parameters('policyName'), '-workspace')]",
             "existenceCondition": {
                 "allOf": [
                     {
@@ -38,6 +38,9 @@
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
+                            "policyName": {
+								"type": "string"
+							},
                             "resourceLocation": {
 								"type": "string"
 							},
@@ -55,7 +58,7 @@
                             {
                                 "type": "Microsoft.Storage/storageAccounts/blobServices/providers/diagnosticSettings",
                                 "apiVersion": "2021-05-01-preview",
-                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-workspace')]",
+                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/', parameters('policyName'), '-workspace')]",
                                 "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
                                 "properties": {
@@ -97,7 +100,7 @@
                             {
                                 "type": "Microsoft.Storage/storageAccounts/fileServices/providers/diagnosticSettings",
                                 "apiVersion": "2021-05-01-preview",
-                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-workspace')]",
+                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/', parameters('policyName'), '-workspace')]",
                                 "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
                                 "properties": {
@@ -139,7 +142,7 @@
                             {
                                 "type": "Microsoft.Storage/storageAccounts/tableServices/providers/diagnosticSettings",
                                 "apiVersion": "2021-05-01-preview",
-                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-workspace')]",
+                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/', parameters('policyName'), '-workspace')]",
                                 "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
                                 "properties": {
@@ -181,7 +184,7 @@
                             {
                                 "type": "Microsoft.Storage/storageAccounts/queueServices/providers/diagnosticSettings",
                                 "apiVersion": "2021-05-01-preview",
-                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-workspace')]",
+                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/', parameters('policyName'), '-workspace')]",
                                 "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
                                 "properties": {
@@ -223,7 +226,7 @@
                             {
                                 "type": "Microsoft.Storage/storageAccounts/providers/diagnosticSettings",
                                 "apiVersion": "2021-05-01-preview",
-                                "name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/setByPolicy-workspace')]",
+                                "name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/', parameters('policyName'), '-workspace')]",
                                 "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
                                 "properties": {
@@ -251,6 +254,9 @@
                         ]
                     },
                     "parameters": {
+                        "policyName": {
+							"value": "[parameters('policyName')]"
+						},
                         "resourceLocation": {
                             "value": "[field('location')]"
                         },

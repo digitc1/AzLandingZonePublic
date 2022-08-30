@@ -33,6 +33,9 @@
                 "properties": {
                     "mode": "incremental",
                     "parameters": {
+                        "policyName": {
+							"value": "[parameters('policyName')]"
+						},
                         "workspaceId": {
                             "value": "[parameters('workspaceId')]"
                         },
@@ -44,6 +47,9 @@
                         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
+                            "policyName": {
+								"type": "string"
+							},
                             "workspaceId": {
                                 "type": "string"
                             },
@@ -55,8 +61,8 @@
                         "resources": [
                             {
                                 "type": "Microsoft.Insights/diagnosticSettings",
-                                "apiVersion": "2017-05-01-preview",
-                                "name": "setByPolicy-workspace",
+                                "apiVersion": "2021-05-01-preview",
+                                "name": "[concat(parameters('policyName'), '-workspace')]",
                                 "properties": {
                                     "workspaceId": "[parameters('workspaceId')]",
                                     "logs": [

@@ -11,7 +11,7 @@
 		"effect": "[parameters('effect')]",
 		"details": {
 			"type": "Microsoft.Insights/diagnosticSettings",
-			"name": "setByPolicy-eventHub",
+			"name": "[concat(parameters('policyName'), '-eventHub')]",
 			"existenceCondition": {
 				"allOf": [
 					{
@@ -38,6 +38,9 @@
 						"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 						"contentVersion": "1.0.0.0",
 						"parameters": {
+							"policyName": {
+								"type": "string"
+							},
 							"resourceLocation": {
 								"type": "string"
 							},
@@ -57,8 +60,8 @@
 						"resources": [
 							{
 								"type": "Microsoft.Network/publicIPAddresses/providers/diagnosticSettings",
-								"apiVersion": "2017-05-01-preview",
-								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-eventHub')]",
+								"apiVersion": "2021-05-01-preview",
+								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/', parameters('policyName'), '-eventHub')]",
 								"location": "[parameters('resourceLocation')]",
 								"dependsOn": [],
 								"properties": {
@@ -76,16 +79,12 @@
 									],
 									"logs": [
 										{
-											"category": "DDoSProtectionNotifications",
-											"enabled": "True"
-										},
-										{
-											"category": "DDoSMitigationFlowLogs",
-											"enabled": "True"
-										},
-										{
-											"category": "DDoSMitigationReports",
-											"enabled": "True"
+											"categoryGroup": "allLogs",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
 										}
 									]
 								}
@@ -93,6 +92,9 @@
 						]
 					},
 					"parameters": {
+						"policyName": {
+							"value": "[parameters('policyName')]"
+						},
 						"resourceLocation": {
 							"value": "[field('location')]"
 						},

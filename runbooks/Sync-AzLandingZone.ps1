@@ -11,7 +11,7 @@ try {
         -ServicePrincipal
     "Logged in."
     
-    $assignmentList = (Get-AzPolicyState | Where-Object { $_.PolicyAssignmentName -Like "SLZ-*" -And $_.ComplianceState -eq "NonCompliant" -And $_.PolicyDefinitionAction -eq "deployifnotexists" }) | Sort-Object -Unique -Property PolicyDefinitionReferenceId, PolicyDefinitionId
+    $assignmentList = (Get-AzPolicyState -ManagementGroupName lz-management-group -Filter "(PolicyDefinitionAction eq 'deployIfNotExists' and ComplianceState eq 'NonCompliant')" | Sort-Object -Unique -Property PolicyDefinitionReferenceId, PolicyDefinitionId)
     foreach ($assignment in $assignmentList) {
         if ($assignment.PolicyDefinitionReferenceId) {
             "Running Remediation for $($assignment.PolicyDefinitionName)"

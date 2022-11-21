@@ -59,6 +59,16 @@
 								"dependsOn": [],
 								"properties": {
 									"storageAccountId": "[parameters('storageAccountId')]",
+									"metrics": [
+										{
+											"category": "AllMetrics",
+											"enabled": "True",
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
+										}
+									],
 									"logs": [
 										{
 											"categoryGroup": "allLogs",

@@ -4,7 +4,7 @@ appGateways,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/mast
 appService,8,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/appService.json
 automationAccts,6,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/automationAccounts.json
 azureFirewalls,6,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/azureFirewalls.json
-bastionHosts,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/bastionHosts.json
+bastionHosts,6,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/bastionHosts.json
 batchAccounts,6,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/batchAccounts.json
 cognitiveServices,6,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/cognitiveServices.json
 dataLakeAnalytics,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/eventHub/dataLakeAnalytics.json

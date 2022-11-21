@@ -62,6 +62,16 @@
 								"location": "[parameters('resourceLocation')]",
 								"dependsOn": [],
 								"properties": {
+									"metrics": [
+										{
+											"category": "AllMetrics",
+											"enabled": "True",
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
+										}
+									],
 									"logs": [
 										{
 											"categoryGroup": "allLogs",

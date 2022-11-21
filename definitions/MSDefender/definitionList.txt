@@ -1,0 +1,2 @@
+Contacts,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/MsDefender/SecurityContacts.json
+Assessments,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/MsDefender/VirtualMachinesVulnerabilityAssessment.json

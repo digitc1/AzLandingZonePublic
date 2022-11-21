@@ -1,0 +1,12 @@
+AppService,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/MsDefender/pricing/AppServices.json
+Arm,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/MsDefender/pricing/Arm.json
+Cloud,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/MsDefender/pricing/CloudPosture.json
+Containers,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/MsDefender/pricing/Containers.json
+CosmosDbs,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/MsDefender/pricing/CosmosDbs.json
+Dns,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/MsDefender/pricing/Dns.json
+KeyVaults,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/MsDefender/pricing/KeyVaults.json
+OpenDbs,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/MsDefender/pricing/OpenSourceRelationalDatabases.json
+SqlServers,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/MsDefender/pricing/SqlServers.json
+SqlVM,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/MsDefender/pricing/SqlServerVirtualMachines.json
+Storage,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/MsDefender/pricing/StorageAccounts.json
+VM,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/MsDefender/pricing/VirtualMachines.json

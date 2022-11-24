@@ -1,5 +1,5 @@
 analysisServices,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/analysisServices.json
-appFunction,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/appFunction.json
+appFunction,5,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/appFunction.json
 appGateways,3,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/applicationGateways.json
 appService,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/appService.json
 automationAccts,4,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/diagnosticSettings/storageAccount/automationAccounts.json

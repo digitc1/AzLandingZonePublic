@@ -4,10 +4,6 @@
             {
                 "field": "type",
                 "equals": "Microsoft.Storage/storageAccounts"
-            },
-            {
-                "field": "location",
-                "like": "[parameters('region')]"
             }
         ]
     },
@@ -15,8 +11,8 @@
         "effect": "[parameters('effect')]",
         "details": {
             "type": "Microsoft.Insights/diagnosticSettings",
-            "name": "setByPolicy-eventHub",
-            "existenceCondition": {
+            "name": "[concat(parameters('policyName'), '-eventHub')]",
+			"existenceCondition": {
                 "allOf": [
                     {
                         "field": "Microsoft.Insights/diagnosticSettings/logs.enabled",
@@ -42,10 +38,13 @@
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
+                            "policyName": {
+								"type": "string"
+							},
+                            "resourceLocation": {
+								"type": "string"
+							},
                             "resourceName": {
-                                "type": "string"
-                            },
-                            "region": {
                                 "type": "string"
                             },
                             "eventHubRuleId": {
@@ -61,9 +60,9 @@
                         "resources": [
                             {
                                 "type": "Microsoft.Storage/storageAccounts/blobServices/providers/diagnosticSettings",
-                                "apiVersion": "2017-05-01-preview",
-                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-eventHub')]",
-                                "location": "[parameters('region')]",
+                                "apiVersion": "2021-05-01-preview",
+                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/', parameters('policyName'), '-eventHub')]",
+                                "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
                                 "properties": {
                                     "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
@@ -71,7 +70,19 @@
                                     "metrics": [
                                         {
                                             "category": "Transaction",
-                                            "enabled": "True"
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
+                                        },
+                                        {
+                                            "category": "Capacity",
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
                                         }
                                     ],
                                     "logs": [
@@ -92,9 +103,9 @@
                             },
                             {
                                 "type": "Microsoft.Storage/storageAccounts/fileServices/providers/diagnosticSettings",
-                                "apiVersion": "2017-05-01-preview",
-                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-eventHub')]",
-                                "location": "[parameters('region')]",
+                                "apiVersion": "2021-05-01-preview",
+                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/', parameters('policyName'), '-eventHub')]",
+                                "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
                                 "properties": {
                                     "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
@@ -102,7 +113,19 @@
                                     "metrics": [
                                         {
                                             "category": "Transaction",
-                                            "enabled": "True"
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
+                                        },
+                                        {
+                                            "category": "Capacity",
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
                                         }
                                     ],
                                     "logs": [
@@ -123,9 +146,9 @@
                             },
                             {
                                 "type": "Microsoft.Storage/storageAccounts/tableServices/providers/diagnosticSettings",
-                                "apiVersion": "2017-05-01-preview",
-                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-eventHub')]",
-                                "location": "[parameters('region')]",
+                                "apiVersion": "2021-05-01-preview",
+                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/', parameters('policyName'), '-eventHub')]",
+                                "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
                                 "properties": {
                                     "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
@@ -133,7 +156,19 @@
                                     "metrics": [
                                         {
                                             "category": "Transaction",
-                                            "enabled": "True"
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
+                                        },
+                                        {
+                                            "category": "Capacity",
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
                                         }
                                     ],
                                     "logs": [
@@ -154,9 +189,9 @@
                             },
                             {
                                 "type": "Microsoft.Storage/storageAccounts/queueServices/providers/diagnosticSettings",
-                                "apiVersion": "2017-05-01-preview",
-                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/setByPolicy-eventHub')]",
-                                "location": "[parameters('region')]",
+                                "apiVersion": "2021-05-01-preview",
+                                "name": "[concat(parameters('resourceName'), '/default/', 'Microsoft.Insights/', parameters('policyName'), '-eventHub')]",
+                                "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
                                 "properties": {
                                     "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
@@ -164,7 +199,19 @@
                                     "metrics": [
                                         {
                                             "category": "Transaction",
-                                            "enabled": "True"
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
+                                        },
+                                        {
+                                            "category": "Capacity",
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
                                         }
                                     ],
                                     "logs": [
@@ -185,9 +232,9 @@
                             },
                             {
                                 "type": "Microsoft.Storage/storageAccounts/providers/diagnosticSettings",
-                                "apiVersion": "2017-05-01-preview",
-                                "name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/setByPolicy-eventHub')]",
-                                "location": "[parameters('region')]",
+                                "apiVersion": "2021-05-01-preview",
+                                "name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/', parameters('policyName'), '-eventHub')]",
+                                "location": "[parameters('resourceLocation')]",
                                 "dependsOn": [],
                                 "properties": {
                                     "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
@@ -195,7 +242,19 @@
                                     "metrics": [
                                         {
                                             "category": "Transaction",
-                                            "enabled": "True"
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
+                                        },
+                                        {
+                                            "category": "Capacity",
+                                            "enabled": true,
+                                            "retentionPolicy": {
+                                                "enabled": false,
+                                                "days": 0
+                                            }
                                         }
                                     ]
                                 }
@@ -203,11 +262,14 @@
                         ]
                     },
                     "parameters": {
+                        "policyName": {
+							"value": "[parameters('policyName')]"
+						},
+                        "resourceLocation": {
+                            "value": "[field('location')]"
+                        },
                         "resourceName": {
                             "value": "[field('name')]"
-                        },
-                        "region": {
-                            "value": "[parameters('region')]"
                         },
                         "eventHubRuleId": {
                             "value": "[parameters('eventHubRuleId')]"

@@ -14,7 +14,6 @@
             "deploymentScope": "subscription",
             "existenceScope": "subscription",
             "roleDefinitionIds": [
-                "/providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
                 "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
             ],
             "existenceCondition": {
@@ -34,9 +33,9 @@
                 "properties": {
                     "mode": "incremental",
                     "parameters": {
-                        "region": {
-                            "value": "[parameters('region')]"
-                        },
+                        "policyName": {
+							"value": "[parameters('policyName')]"
+						},
                         "workspaceId": {
                             "value": "[parameters('workspaceId')]"
                         },
@@ -48,9 +47,9 @@
                         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
-                            "region": {
-                                "type": "string"
-                            },
+                            "policyName": {
+								"type": "string"
+							},
                             "workspaceId": {
                                 "type": "string"
                             },
@@ -62,8 +61,8 @@
                         "resources": [
                             {
                                 "type": "Microsoft.Insights/diagnosticSettings",
-                                "apiVersion": "2017-05-01-preview",
-                                "name": "setByPolicy-workspace",
+                                "apiVersion": "2021-05-01-preview",
+                                "name": "[concat(parameters('policyName'), '-workspace')]",
                                 "properties": {
                                     "workspaceId": "[parameters('workspaceId')]",
                                     "logs": [

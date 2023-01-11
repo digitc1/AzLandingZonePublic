@@ -1,10 +1,10 @@
 {
-	"region": {
-		"type": "String",
+    "policyName": {
+        "type": "String",
         "metadata": {
-			"displayName": "Location",
-			"description": "Region where most of resources are deployed"
-        }
+            "displayName": "policy name"
+        },
+        "defaultValue": "setByPolicy"
     },
     "workspaceId": {
         "type": "String",

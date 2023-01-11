@@ -4,10 +4,6 @@
 			{
 				"field": "type",
 				"equals": "Microsoft.Sql/managedInstances/databases"
-			},
-			{
-				"field": "location",
-				"like": "[parameters('region')]"
 			}
 		]
 	},
@@ -15,7 +11,7 @@
 		"effect": "[parameters('effect')]",
 		"details": {
 			"type": "Microsoft.Insights/diagnosticSettings",
-			"name": "setByPolicy-eventHub",
+			"name": "[concat(parameters('policyName'), '-eventHub')]",
 			"existenceCondition": {
 				"allOf": [
 					{
@@ -42,10 +38,13 @@
 						"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 						"contentVersion": "1.0.0.0",
 						"parameters": {
+							"policyName": {
+								"type": "string"
+							},
 							"resourceName": {
 								"type": "string"
 							},
-							"region": {
+							"resourceLocation": {
 								"type": "string"
 							},
 							"eventHubRuleId": {
@@ -61,29 +60,21 @@
 						"resources": [
 							{
 								"type": "Microsoft.Sql/managedInstances/databases/providers/diagnosticSettings",
-								"apiVersion": "2017-05-01-preview",
-								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-eventHub')]",
-								"location": "[parameters('region')]",
+								"apiVersion": "2021-05-01-preview",
+								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/', parameters('policyName'), '-eventHub')]",
+								"location": "[parameters('resourceLocation')]",
 								"dependsOn": [],
 								"properties": {
 									"eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
 									"eventHubName": "[parameters('eventHubName')]",
 									"logs": [
 										{
-											"category": "SQLInsights",
-											"enabled": "True"
-										},
-										{
-											"category": "QueryStoreRuntimeStatistics",
-											"enabled": "True"
-										},
-										{
-											"category": "QueryStoreWaitStatistics",
-											"enabled": "True"
-										},
-										{
-											"category": "Errors",
-											"enabled": "True"
+											"categoryGroup": "allLogs",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
 										}
 									]
 								}
@@ -91,11 +82,14 @@
 						]
 					},
 					"parameters": {
-						"region": {
-							"value": "[parameters('region')]"
+						"policyName": {
+							"value": "[parameters('policyName')]"
+						},
+						"resourceLocation": {
+							"value": "[field('location')]"
 						},
 						"resourceName": {
-							"value": "[field('name')]"
+							"value": "[field('fullname')]"
 						},
 						"eventHubRuleId": {
 							"value": "[parameters('eventHubRuleId')]"

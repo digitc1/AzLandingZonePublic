@@ -4,10 +4,6 @@
 			{
 				"field": "type",
 				"equals": "Microsoft.ContainerService/managedClusters"
-			},
-			{
-				"field": "location",
-				"like": "[parameters('region')]"
 			}
 		]
 	},
@@ -15,7 +11,7 @@
 		"effect": "[parameters('effect')]",
 		"details": {
 			"type": "Microsoft.Insights/diagnosticSettings",
-			"name": "setByPolicy-workspace",
+			"name": "[concat(parameters('policyName'), '-workspace')]",
 			"existenceCondition": {
 				"allOf": [
 					{
@@ -42,10 +38,13 @@
 						"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 						"contentVersion": "1.0.0.0",
 						"parameters": {
-							"resourceName": {
+							"policyName": {
 								"type": "string"
 							},
-							"region": {
+							"resourceLocation": {
+								"type": "string"
+							},
+							"resourceName": {
 								"type": "string"
 							},
 							"workspaceId": {
@@ -58,9 +57,9 @@
 						"resources": [
 							{
 								"type": "Microsoft.ContainerService/managedClusters/providers/diagnosticSettings",
-								"apiVersion": "2017-05-01-preview",
-								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-workspace')]",
-								"location": "[parameters('region')]",
+								"apiVersion": "2021-05-01-preview",
+								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/', parameters('policyName'), '-workspace')]",
+								"location": "[parameters('resourceLocation')]",
 								"dependsOn": [],
 								"properties": {
 									"metrics": [
@@ -101,6 +100,22 @@
 										{
 											"category": "guard",
 											"enabled": "True"
+										},
+										{
+											"category": "cloud-controller-manager",
+											"enabled": "True"
+										},
+										{
+											"category": "csi-azuredisk-controller",
+											"enabled": "True"
+										},
+										{
+											"category": "csi-azurefile-controller",
+											"enabled": "True"
+										},
+										{
+											"category": "csi-snapshot-controller",
+											"enabled": "True"
 										}
 									],
 									"workspaceId": "[parameters('workspaceId')]"
@@ -109,8 +124,11 @@
 						]
 					},
 					"parameters": {
-						"region": {
-							"value": "[parameters('region')]"
+						"policyName": {
+							"value": "[parameters('policyName')]"
+						},
+						"resourceLocation": {
+							"value": "[field('location')]"
 						},
 						"resourceName": {
 							"value": "[field('name')]"

@@ -4,10 +4,6 @@
 			{
 				"field": "type",
 				"equals": "Microsoft.Network/applicationGateways"
-			},
-			{
-				"field": "location",
-				"like": "[parameters('region')]"
 			}
 		]
 	},
@@ -15,7 +11,7 @@
 		"effect": "[parameters('effect')]",
 		"details": {
 			"type": "Microsoft.Insights/diagnosticSettings",
-			"name": "setByPolicy-workspace",
+			"name": "[concat(parameters('policyName'), '-workspace')]",
 			"existenceCondition": {
 				"allOf": [
 					{
@@ -42,10 +38,13 @@
 						"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 						"contentVersion": "1.0.0.0",
 						"parameters": {
-							"resourceName": {
+							"policyName": {
 								"type": "string"
 							},
-							"region": {
+							"resourceLocation": {
+								"type": "string"
+							},
+							"resourceName": {
 								"type": "string"
 							},
 							"workspaceId": {
@@ -58,9 +57,9 @@
 						"resources": [
 							{
 								"type": "Microsoft.Network/applicationGateways/providers/diagnosticSettings",
-								"apiVersion": "2017-05-01-preview",
-								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-workspace')]",
-								"location": "[parameters('region')]",
+								"apiVersion": "2021-05-01-preview",
+								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/', parameters('policyName'), '-workspace')]",
+								"location": "[parameters('resourceLocation')]",
 								"dependsOn": [],
 								"properties": {
 									"metrics": [
@@ -75,16 +74,12 @@
 									],
 									"logs": [
 										{
-											"category": "ApplicationGatewayAccessLog",
-											"enabled": "True"
-										},
-										{
-											"category": "ApplicationGatewayPerformanceLog",
-											"enabled": "True"
-										},
-										{
-											"category": "ApplicationGatewayFirewallLog",
-											"enabled": "True"
+											"categoryGroup": "allLogs",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
 										}
 									],
 									"workspaceId": "[parameters('workspaceId')]"
@@ -93,8 +88,11 @@
 						]
 					},
 					"parameters": {
-						"region": {
-							"value": "[parameters('region')]"
+						"policyName": {
+							"value": "[parameters('policyName')]"
+						},
+						"resourceLocation": {
+							"value": "[field('location')]"
 						},
 						"resourceName": {
 							"value": "[field('name')]"

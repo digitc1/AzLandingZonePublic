@@ -6,8 +6,8 @@
 				"equals": "Microsoft.Sql/servers/databases"
 			},
 			{
-				"field": "location",
-				"like": "[parameters('region')]"
+				"field": "name",
+				"notEquals": "master"
 			}
 		]
 	},
@@ -15,7 +15,7 @@
 		"effect": "[parameters('effect')]",
 		"details": {
 			"type": "Microsoft.Insights/diagnosticSettings",
-			"name": "setByPolicy-storageAccount",
+			"name": "[concat(parameters('policyName'), '-storageAccount')]",
 			"existenceCondition": {
 				"allOf": [
 					{
@@ -42,10 +42,13 @@
 						"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 						"contentVersion": "1.0.0.0",
 						"parameters": {
-							"resourceName": {
+							"policyName": {
 								"type": "string"
 							},
-							"region": {
+							"resourceLocation": {
+								"type": "string"
+							},
+							"resourceName": {
 								"type": "string"
 							},
 							"storageAccountId": {
@@ -58,9 +61,9 @@
 						"resources": [
 							{
 								"type": "Microsoft.Sql/servers/databases/providers/diagnosticSettings",
-								"apiVersion": "2017-05-01-preview",
-								"name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/setByPolicy-storageAccount')]",
-								"location": "[parameters('region')]",
+								"apiVersion": "2021-05-01-preview",
+								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/', parameters('policyName'), '-storageAccount')]",
+								"location": "[parameters('resourceLocation')]",
 								"dependsOn": [],
 								"properties": {
 									"storageAccountId": "[parameters('storageAccountId')]",
@@ -92,40 +95,12 @@
 									],
 									"logs": [
 										{
-											"category": "SQLInsights",
-											"enabled": "True"
-										},
-										{
-											"category": "AutomaticTuning",
-											"enabled": "True"
-										},
-										{
-											"category": "QueryStoreWaitStatistics",
-											"enabled": "True"
-										},
-										{
-											"category": "QueryStoreRuntimeStatistics",
-											"enabled": "True"
-										},
-										{
-											"category": "Errors",
-											"enabled": "True"
-										},
-										{
-											"category": "DatabaseWaitStatistics",
-											"enabled": "True"
-										},
-										{
-											"category": "Timeouts",
-											"enabled": "True"
-										},
-										{
-											"category": "Blocks",
-											"enabled": "True"
-										},
-										{
-											"category": "Deadlocks",
-											"enabled": "True"
+											"categoryGroup": "allLogs",
+											"enabled": true,
+											"retentionPolicy": {
+												"enabled": false,
+												"days": 0
+											}
 										}
 									]
 								}
@@ -133,8 +108,11 @@
 						]
 					},
 					"parameters": {
-						"region": {
-							"value": "[parameters('region')]"
+						"policyName": {
+							"value": "[parameters('policyName')]"
+						},
+						"resourceLocation": {
+							"value": "[field('location')]"
 						},
 						"resourceName": {
 							"value": "[field('fullName')]"

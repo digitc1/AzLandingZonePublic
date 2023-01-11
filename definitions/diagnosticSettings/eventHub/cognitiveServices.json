@@ -11,7 +11,7 @@
 		"effect": "[parameters('effect')]",
 		"details": {
 			"type": "Microsoft.Insights/diagnosticSettings",
-			"name": "setByPolicy-eventHub",
+			"name": "[concat(parameters('policyName'), '-eventHub')]",
 			"existenceCondition": {
 				"allOf": [
 					{
@@ -38,10 +38,10 @@
 						"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 						"contentVersion": "1.0.0.0",
 						"parameters": {
-							"resourceName": {
+							"policyName": {
 								"type": "string"
 							},
-							"region": {
+							"resourceName": {
 								"type": "string"
 							},
 							"eventHubRuleId": {
@@ -57,9 +57,9 @@
 						"resources": [
 							{
 								"type": "Microsoft.CognitiveServices/accounts/providers/diagnosticSettings",
-								"apiVersion": "2017-05-01-preview",
-								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/setByPolicy-eventHub')]",
-								"location": "[parameters('region')]",
+								"apiVersion": "2021-05-01-preview",
+								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/', parameters('policyName'), '-eventHub')]",
+								"location": "westeurope",
 								"dependsOn": [],
 								"properties": {
 									"eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
@@ -93,8 +93,8 @@
 						]
 					},
 					"parameters": {
-						"region": {
-							"value": "[parameters('region')]"
+						"policyName": {
+							"value": "[parameters('policyName')]"
 						},
 						"resourceName": {
 							"value": "[field('name')]"

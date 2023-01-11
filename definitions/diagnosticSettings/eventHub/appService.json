@@ -1,141 +1,146 @@
 {
-	"if": {
-		"allOf": [
-			{
-				"field": "type",
-				"equals": "Microsoft.Web/sites"
-			},
-			{
-				"field": "kind",
-				"in": [
-					"app,linux",
-					"app"
-				]
-			}
-		]
-	},
-	"then": {
-		"effect": "[parameters('effect')]",
-		"details": {
-			"type": "Microsoft.Insights/diagnosticSettings",
-			"name": "[concat(parameters('policyName'), '-eventHub')]",
-			"existenceCondition": {
-				"allOf": [
-					{
-						"field": "Microsoft.Insights/diagnosticSettings/logs.enabled",
-						"equals": "True"
-					},
-					{
-						"field": "Microsoft.Insights/diagnosticSettings/metrics.enabled",
-						"equals": "True"
-					},
-					{
-						"field": "Microsoft.Insights/diagnosticSettings/eventHubAuthorizationRuleId",
-						"equals": "[parameters('eventHubRuleId')]"
-					}
-				]
-			},
-			"roleDefinitionIds": [
-				"/providers/microsoft.authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
-			],
-			"deployment": {
-				"properties": {
-					"mode": "incremental",
-					"template": {
-						"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-						"contentVersion": "1.0.0.0",
-						"parameters": {
-							"policyName": {
-								"type": "string"
-							},
-							"resourceLocation": {
-								"type": "string"
-							},
-							"resourceName": {
-								"type": "string"
-							},
-							"eventHubRuleId": {
-								"type": "string"
-							},
-							"eventHubName": {
-								"type": "string"
-							},
-							"effect": {
-								"type": "string"
-							}
-						},
-						"resources": [
-							{
-								"type": "Microsoft.Web/sites/providers/diagnosticSettings",
-								"apiVersion": "2021-05-01-preview",
-								"name": "[concat(parameters('resourceName'), '/Microsoft.Insights/', parameters('policyName'), '-eventHub')]",
-								"location": "[parameters('resourceLocation')]",
-								"dependsOn": [],
-								"properties": {
-									"eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
-									"eventHubName": "[parameters('eventHubName')]",
-									"metrics": [
-										{
-											"category": "AllMetrics",
-											"enabled": "True",
-											"retentionPolicy": {
-												"enabled": false,
-												"days": 0
-											}
-										}
-									],
-									"logs": [
-										{
-											"category": "AppServiceHTTPLogs",
-											"enabled": "True"
-										},
-										{
-											"category": "AppServiceConsoleLogs",
-											"enabled": "True"
-										},
-										{
-											"category": "AppServiceAppLogs",
-											"enabled": "True"
-										},
-										{
-											"category": "AppServiceAuditLogs",
-											"enabled": "True"
-										},
-										{
-											"category": "AppServiceIPSecAuditLogs",
-											"enabled": "True"
-										},
-										{
-											"category": "AppServicePlatformLogs",
-											"enabled": "True"
-										}
-									]
-								}
-							}
-						]
-					},
-					"parameters": {
-						"policyName": {
-							"value": "[parameters('policyName')]"
-						},
-						"resourceLocation": {
-							"value": "[field('location')]"
-						},
-						"resourceName": {
-							"value": "[field('name')]"
-						},
-						"eventHubRuleId": {
-							"value": "[parameters('eventHubRuleId')]"
-						},
-						"eventHubName": {
-							"value": "[parameters('eventHubName')]"
-						},
-						"effect": {
-							"value": "[parameters('effect')]"
-						}
-					}
-				}
-			}
-		}
-	}
+  "if": {
+    "allOf": [
+      {
+        "field": "type",
+        "equals": "Microsoft.Web/sites"
+      },
+      {
+        "field": "kind",
+        "in": ["app,linux", "app"]
+      }
+    ]
+  },
+  "then": {
+    "effect": "[parameters('effect')]",
+    "details": {
+      "type": "Microsoft.Insights/diagnosticSettings",
+      "name": "[concat(parameters('policyName'), '-eventHub')]",
+      "existenceCondition": {
+        "allOf": [
+          {
+            "field": "Microsoft.Insights/diagnosticSettings/logs.enabled",
+            "equals": "True"
+          },
+          {
+            "field": "Microsoft.Insights/diagnosticSettings/metrics.enabled",
+            "equals": "True"
+          },
+          {
+            "field": "Microsoft.Insights/diagnosticSettings/eventHubAuthorizationRuleId",
+            "equals": "[parameters('eventHubRuleId')]"
+          }
+        ]
+      },
+      "roleDefinitionIds": [
+        "/providers/microsoft.authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+      ],
+      "deployment": {
+        "properties": {
+          "mode": "incremental",
+          "template": {
+            "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+            "contentVersion": "1.0.0.0",
+            "parameters": {
+              "policyName": {
+                "type": "string"
+              },
+              "resourceLocation": {
+                "type": "string"
+              },
+              "resourceName": {
+                "type": "string"
+              },
+              "eventHubRuleId": {
+                "type": "string"
+              },
+              "eventHubName": {
+                "type": "string"
+              },
+              "effect": {
+                "type": "string"
+              }
+            },
+            "resources": [
+              {
+                "type": "Microsoft.Web/sites/providers/diagnosticSettings",
+                "apiVersion": "2021-05-01-preview",
+                "name": "[concat(parameters('resourceName'), '/Microsoft.Insights/', parameters('policyName'), '-eventHub')]",
+                "location": "[parameters('resourceLocation')]",
+                "dependsOn": [],
+                "properties": {
+                  "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
+                  "eventHubName": "[parameters('eventHubName')]",
+                  "metrics": [
+                    {
+                      "category": "AllMetrics",
+                      "enabled": "True",
+                      "retentionPolicy": {
+                        "enabled": false,
+                        "days": 0
+                      }
+                    }
+                  ],
+                  "logs": [
+                    {
+                      "category": "AppServiceHTTPLogs",
+                      "enabled": "True"
+                    },
+                    {
+                      "category": "AppServiceConsoleLogs",
+                      "enabled": "True"
+                    },
+                    {
+                      "category": "AppServiceAppLogs",
+                      "enabled": "True"
+                    },
+                    {
+                      "category": "AppServiceAuditLogs",
+                      "enabled": "True"
+                    },
+                    {
+                      "category": "AppServiceIPSecAuditLogs",
+                      "enabled": "True"
+                    },
+                    {
+                      "category": "AppServicePlatformLogs",
+                      "enabled": "True"
+                    },
+                    {
+                      "category": "ReportAntivirusAuditLogs",
+                      "enabled": "True"
+                    },
+                    {
+                      "category": "SiteContentChangeAuditLogs",
+                      "enabled": "True"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "parameters": {
+            "policyName": {
+              "value": "[parameters('policyName')]"
+            },
+            "resourceLocation": {
+              "value": "[field('location')]"
+            },
+            "resourceName": {
+              "value": "[field('name')]"
+            },
+            "eventHubRuleId": {
+              "value": "[parameters('eventHubRuleId')]"
+            },
+            "eventHubName": {
+              "value": "[parameters('eventHubName')]"
+            },
+            "effect": {
+              "value": "[parameters('effect')]"
+            }
+          }
+        }
+      }
+    }
+  }
 }

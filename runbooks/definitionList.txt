@@ -2,3 +2,4 @@ Lock-AzLandingZoneStorage,https://raw.githubusercontent.com/digitc1/AzLandingZon
 Sync-AzLandingZone,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/runbooks/Sync-AzLandingZone.ps1
 Update-AutomationAccountModules,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/runbooks/Update-AutomationAccountModules.ps1
 Update-AzLandingZonePolicies,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/runbooks/Update-AzLandingZone.ps1
+Enable-AutomationSolution,https://github.com/azureautomation/runbooks/blob/master/Utility/ARM/Enable-AutomationSolution.ps1

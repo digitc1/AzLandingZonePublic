@@ -1,5 +1,4 @@
 Contacts,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/MSDefender/SecurityContacts.json
 Assessments,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/MSDefender/VirtualMachineVulnerabilityAssessment.json
-OmsAgent,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/MSDefender/OmsAgentLinux.json
 DependencyAgentLinux,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/MSDefender/dependencyAgentLinux.json
 DependencyAgentWin,1,https://raw.githubusercontent.com/digitc1/AzLandingZonePublic/master/definitions/MSDefender/dependencyAgentWindows.json
